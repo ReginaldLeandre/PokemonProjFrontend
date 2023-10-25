@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
-import { getRanPoke } from '../utilities/service/pokemon-service'
+import { getRanPoke } from '../../utilities/service/pokemon-service'
 
 const RandomPokemon = () => {
     const [pokeData, setPokeData] = useState([])
     const [loading, setLoading] = useState(true)
 
-    async function handleRequest() {
-        try {
-          
-          const pokeResponse = await getRanPoke()
-          console.log("this is pokeResponse: ", pokeResponse)
-          if (pokeResponse) {
-            setPokeData(pokeResponse)
-            console.log("this is pokeData: ", pokeData)
-            setLoading(false)
-          }
-        } catch (error) {
-          console.error(error)
-        }
-      }
       useEffect(() => {
-        handleRequest()
-      }, [loading])
+        async function handleRequest() {
+          try {
+            
+            const pokeResponse = await getRanPoke()
+            console.log("this is pokeResponse: ", pokeResponse)
+            if (pokeResponse) {
+              setPokeData(pokeResponse)
+              console.log("this is pokeData: ", pokeData)
+              setLoading(false)
+            }
+          } catch (error) {
+            console.error(error)
+          }
+        }
+
+        if(loading === true) {
+          handleRequest()
+        }
+      }, [])
 
   return (
     <div className="">
@@ -32,9 +35,9 @@ const RandomPokemon = () => {
         <ul className="">
           {pokeData.map((pokemon) => (
             <li key={pokemon.pokeDexId} className="">
-              <Link to={`/${pokemon.pokeDexId}`}>
+              <Link to={`poke/${pokemon.pokeDexId}`}>
               <img
-                  src={pokemon.dreamWorld ? pokemon.dreamWorld : pokemon.front}
+                  src={pokemon.home}
                   alt={pokemon.pokemonName}
                 />
                 <h3 className="">{pokemon.pokemonName}</h3>

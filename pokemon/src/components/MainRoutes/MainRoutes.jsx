@@ -1,7 +1,7 @@
 import { Routes, Route} from "react-router-dom";
 
 
-import RandomPokemon from "../../pages/RandomPokemon";
+import RandomPokemon from "../RandomPokemonComponent/RandomPokemon";
 
 export default function MainRoutes(props) {
 
