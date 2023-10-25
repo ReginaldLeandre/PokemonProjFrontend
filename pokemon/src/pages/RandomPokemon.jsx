@@ -3,26 +3,26 @@ import { Link } from "react-router-dom"
 import { getRanPoke } from '../utilities/service/pokemon-service'
 
 const RandomPokemon = () => {
-    const [pokeData, setPokeData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [pokeData, setPokeData] = useState([])
+    const [loading, setLoading] = useState(true)
 
     async function handleRequest() {
         try {
           
-          const pokeResponse = await getRanPoke();
+          const pokeResponse = await getRanPoke()
           console.log("this is pokeResponse: ", pokeResponse)
           if (pokeResponse) {
-            setPokeData(pokeResponse);
+            setPokeData(pokeResponse)
             console.log("this is pokeData: ", pokeData)
-            setLoading(false);
+            setLoading(false)
           }
         } catch (error) {
-          console.error(error);
+          console.error(error)
         }
       }
       useEffect(() => {
-        handleRequest();
-      }, [loading]);
+        handleRequest()
+      }, [loading])
 
   return (
     <div className="">
