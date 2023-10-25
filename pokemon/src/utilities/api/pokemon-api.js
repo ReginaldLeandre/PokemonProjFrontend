@@ -7,6 +7,7 @@ export async function show(id) {
         method: "GET"
   })
 
+//comment
 
   if(res.ok){
     return res.json()
