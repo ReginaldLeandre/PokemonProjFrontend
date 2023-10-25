@@ -1,5 +1,5 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-const pokeURL = `${BASE_URL}api`
+const pokeURL = `${BASE_URL}/api`
 
 //router.get('/:id', pokemonCtrl.show)
 export async function show(id) {
