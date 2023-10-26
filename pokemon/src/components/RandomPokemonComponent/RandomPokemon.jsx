@@ -28,23 +28,29 @@ const RandomPokemon = () => {
       }, [])
 
   return (
-    <div className="">
+    <div>
     {!loading ? (
       <div className="mb-4">
         {/* <h1 className="text-4xl my-4">Pokémon</h1> */}
         <ul className="grid grid-cols-5 gap-4 mx-4 my-8">
           {pokeData.map((pokemon) => (
-            <li key={pokemon.pokeDexId} className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
+            <li key={pokemon.pokeDexId}>
               <Link to={`poke/${pokemon.pokeDexId}`}>
-              <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
+                <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
+                <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
                   src={pokemon.home}
                   alt={pokemon.pokemonName}
                 />
-                <div className="bg-poke-lightyellow">
-                  <h3 className="pt-2">{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</h3>
-                  <h4 className="pb-2">#{pokemon.pokeDexId}</h4>
-                  <h4>${pokemon.price}</h4>
+                <div className="bg-poke-lightyellow flex justify-around">
+                  <div>
+                    <h3 className="pt-2">{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</h3>
+                    <h4 className="pb-2">#{pokemon.pokeDexId}</h4>
+                  </div>
                 </div>
+                </div>
+              <div className="w-max m-auto p-1 rounded my-2 text-xl">
+              ${pokemon.price}
+              </div>
               </Link>
             </li>
           ))}
