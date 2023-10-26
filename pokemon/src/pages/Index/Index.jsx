@@ -2,12 +2,7 @@ import React from 'react'
 import RandomPokemon from '../../components/RandomPokemonComponent/RandomPokemon'
 import wavingPika from '../../assets/wavingPika-unscreen.gif'
 import welcomeMessage from '../../assets/welcome-message.png'
-import welcome from '../../assets/Welcome.png'
-import to from '../../assets/to.png'
-import the from '../../assets/the.png'
-import Pokemon from '../../assets/Pokemon.png'
-import Black from '../../assets/Black.png'
-import Market from '../../assets/Market.png'
+
 
 
 const Index = () => {
