@@ -6,6 +6,7 @@
 }
 .water {
     background-color: #6390F0;
+    color: white;
 }
 .electric {
     background-color: #F7D02C;
@@ -21,6 +22,7 @@
 }
 .poison {
     background-color: #A33EA1;
+    color: white;
 }
 .ground {
     background-color: #E2BF65;
@@ -36,15 +38,19 @@
 }
 .rock {
     background-color: #B6A136;
+    color: white;
 }
 .ghost {
     background-color: #735797;
+    color: white;
 }
 .dragon {
     background-color: #6F35FC;
+    color: white;
 }
 .dark {
     background-color: #705746;
+    color: white;
 }
 .steel {
     background-color: #B7B7CE;
