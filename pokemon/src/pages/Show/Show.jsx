@@ -36,7 +36,7 @@ const Show = () => {
     <div className="">
     {!loading ? (
       <>
-       <h2>#{pokeData.pokeDexId}</h2>
+       <h4>#{pokeData.pokeDexId}</h4>
        <img className=""
                 src={pokeData.home}
                 alt={pokeData.pokemonName}

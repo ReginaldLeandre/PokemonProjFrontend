@@ -43,6 +43,7 @@ const RandomPokemon = () => {
                 <div className="bg-poke-lightyellow">
                   <h3 className="pt-2">{pokemon.pokemonName}</h3>
                   <h4 className="pb-2">#{pokemon.pokeDexId}</h4>
+                  <h4>${pokemon.price}</h4>
                 </div>
               </Link>
             </li>
