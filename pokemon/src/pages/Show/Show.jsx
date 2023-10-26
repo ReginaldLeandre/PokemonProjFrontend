@@ -31,31 +31,12 @@ const Show = () => {
         }
       }, [])
 
-  const colors = {
-      normal: '#F5F5DC', 
-      fighting : '#D3D3D3',
-      flying: '#87CEEB',
-      poison: '#8A2BE2',
-      ground: '#D2B48C',
-      rock: '#664228',
-      bug: '#008080',
-      ghost: '#D8BFD8',
-      steel: '#C0C0C0',
-      fire: '#FF4500',  
-      water: '#0000FF',
-      grass: '#008000',
-      electric: '#FFFF00',
-      psychic: '#FFC0CB',
-      ice: '#E0FFFF',
-      dragon: '#00CED1',
-      dark: '#A9A9A9',
-      fairy: '#FFC0CB'
-  }
-
+ 
   return (
     <div className="w-max mx-auto">
     {!loading ? (
       <>
+
       <div className="lg:flex">
         <div className="flex flex-col w-[300px] bg-poke-yellow border-[8px] border-poke-yellow rounded m-10 h-max">
           <h2>#{pokeData.pokeDexId}</h2>
@@ -103,10 +84,6 @@ const Show = () => {
           </div>
           
       </div>
-
-        
-
-
 
       </>
     ) : (
