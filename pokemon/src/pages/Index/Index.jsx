@@ -1,7 +1,13 @@
 import React from 'react'
 import RandomPokemon from '../../components/RandomPokemonComponent/RandomPokemon'
 import wavingPika from '../../assets/wavingPika-unscreen.gif'
-
+import welcomeMessage from '../../assets/welcome-message.png'
+import welcome from '../../assets/Welcome.png'
+import to from '../../assets/to.png'
+import the from '../../assets/the.png'
+import Pokemon from '../../assets/Pokemon.png'
+import Black from '../../assets/Black.png'
+import Market from '../../assets/Market.png'
 
 
 const Index = () => {
@@ -9,12 +15,11 @@ const Index = () => {
 
   return (
     <div>
-        <img src={wavingPika} alt='Waving Pikachu'/>
-        <h1>Welcome to the Pokémon Black Market!</h1> 
-        <p>You have the option to buy Pokémon for
+      <img className="mx-auto" src={welcomeMessage} alt="Welcome to the Pokemon Black Market!"/>
+        <img className="mx-auto" src={wavingPika} alt='Waving Pikachu'/>
+        <p className="text-2xl bg-poke-blue text-white p-4 w-[90vw] mx-auto rounded-lg">You have the option to buy Pokémon for
             a hefty price or you can test your luck by buying Poké Balls
-            for a fraction of the cost and catch Pokémon in the wild</p>
-
+            for a fraction of the cost and catch Pokémon in the wild. Below are some featured Pokémon for sale. Gotta buy them all!</p>
         <RandomPokemon />     
     </div>
   )

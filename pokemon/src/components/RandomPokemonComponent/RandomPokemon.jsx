@@ -30,9 +30,9 @@ const RandomPokemon = () => {
   return (
     <div className="">
     {!loading ? (
-      <>
-        <h1 className="text-4xl my-4">Here are some Pokemon you can buy: </h1>
-        <ul className="grid grid-cols-5 gap-4 mx-4 ">
+      <div className="mb-4">
+        {/* <h1 className="text-4xl my-4">Pokémon</h1> */}
+        <ul className="grid grid-cols-5 gap-4 mx-4 my-8">
           {pokeData.map((pokemon) => (
             <li key={pokemon.pokeDexId} className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
               <Link to={`poke/${pokemon.pokeDexId}`}>
@@ -41,7 +41,7 @@ const RandomPokemon = () => {
                   alt={pokemon.pokemonName}
                 />
                 <div className="bg-poke-lightyellow">
-                  <h3 className="pt-2">{pokemon.pokemonName}</h3>
+                  <h3 className="pt-2">{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</h3>
                   <h4 className="pb-2">#{pokemon.pokeDexId}</h4>
                   <h4>${pokemon.price}</h4>
                 </div>
@@ -49,7 +49,7 @@ const RandomPokemon = () => {
             </li>
           ))}
         </ul>
-      </>
+      </div>
     ) : (
       <p className="loading">Loading...</p>
     )}
