@@ -1,7 +1,9 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom"
 
 
-import RandomPokemon from "../RandomPokemonComponent/RandomPokemon";
+import Index from "../../pages/Index/Index"
+import Show from '../../pages/Show/Show.jsx'
+
 
 export default function MainRoutes(props) {
 
@@ -11,8 +13,8 @@ export default function MainRoutes(props) {
         <main>
             <Routes>
 
-            <Route path='/pokemon' element={<RandomPokemon />} />
-            
+            <Route path='/' element={<Index />} />
+            <Route path='/poke/:id' element={<Show />} />
             
 
             </Routes>

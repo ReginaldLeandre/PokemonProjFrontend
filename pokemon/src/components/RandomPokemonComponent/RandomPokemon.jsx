@@ -31,17 +31,19 @@ const RandomPokemon = () => {
     <div className="">
     {!loading ? (
       <>
-        <h1>Here are some Pokemon you can buy: </h1>
-        <ul className="">
+        <h1 className="text-4xl my-4">Here are some Pokemon you can buy: </h1>
+        <ul className="grid grid-cols-5 gap-4 mx-4 ">
           {pokeData.map((pokemon) => (
-            <li key={pokemon.pokeDexId} className="">
+            <li key={pokemon.pokeDexId} className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
               <Link to={`poke/${pokemon.pokeDexId}`}>
-              <img
+              <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
                   src={pokemon.home}
                   alt={pokemon.pokemonName}
                 />
-                <h3 className="">{pokemon.pokemonName}</h3>
-                <h4 className="">#{pokemon.pokeDexId}</h4>
+                <div className="bg-poke-lightyellow">
+                  <h3 className="pt-2">{pokemon.pokemonName}</h3>
+                  <h4 className="pb-2">#{pokemon.pokeDexId}</h4>
+                </div>
               </Link>
             </li>
           ))}
