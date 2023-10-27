@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import { show } from '../../utilities/service/pokemon-service'
 import './Show.css'
+import Spinner from '../../components/Spinner/Spinner.jsx'
 
 const Show = () => {
     const [pokeData, setPokeData] = useState([])
@@ -85,7 +86,12 @@ const Show = () => {
       </div>
       </>
     ) : (
-      <p className="">Loading...</p>
+      <div className="w-max mx-auto mt-[100px]">
+        <div className="flex justify-center">
+        <Spinner/>
+        </div>
+        <p className="my-4 text-2xl">Loading...</p>
+      </div>
     )}
   </div>
   )
