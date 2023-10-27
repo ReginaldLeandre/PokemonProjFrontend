@@ -75,8 +75,8 @@ const Show = () => {
                 </tr>
               {pokeData.abilities && pokeData.abilities.map((pokeAbility, index)=>(
                 <tr key={index}>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.name.charAt(0).toUpperCase() + pokeAbility.name.slice(1)}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.description}</td>
                 </tr>
               ))}
               </table>

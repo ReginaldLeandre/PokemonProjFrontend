@@ -4,8 +4,8 @@ import spinner from '../../assets/pokeballspinner.png'
 
 const Spinner = () => {
     return (
-    <div class="wrapper">
-        <div class="pokeball">
+    <div className="wrapper">
+        <div className="pokeball">
             <img src={spinner} alt="pokeball"/>
         </div>
     </div>
