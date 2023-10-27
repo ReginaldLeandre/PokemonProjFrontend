@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom'
 import { Link } from "react-router-dom"
 import { show } from '../../utilities/service/pokemon-service'
 import './Show.css'
-import Spinner from '../../components/Spinner/Spinner.jsx'
+import Spinner from '../../components/Spinner/Spinner'
+
+
 
 const Show = () => {
     const [pokeData, setPokeData] = useState([])
@@ -73,8 +75,8 @@ const Show = () => {
                 </tr>
               {pokeData.abilities && pokeData.abilities.map((pokeAbility, index)=>(
                 <tr key={index}>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.name.charAt(0).toUpperCase() + pokeAbility.name.slice(1)}</td>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.description}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
                 </tr>
               ))}
               </table>
