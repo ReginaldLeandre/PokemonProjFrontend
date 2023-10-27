@@ -7,7 +7,7 @@ import Encounter from '../../assets/Encounter.png'
 
 const Nav = () => {
     return (
-        <div className="flex">
+        <div className="flex ">
             <Link to='/'>
             <img className="ml-4 h-[50px]" src={Home} alt="Pokemon"/>
             </Link>

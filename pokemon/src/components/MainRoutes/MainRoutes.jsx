@@ -12,13 +12,10 @@ export default function MainRoutes(props) {
     return(
         <main>
             <Routes>
-
             <Route path='/' element={<Index />} />
             <Route path='/poke/:id' element={<Show />} />
             <Route path='/pokeballs' element={<PokeBalls />}/>
-
             </Routes>
-
         </main>
     )
 }

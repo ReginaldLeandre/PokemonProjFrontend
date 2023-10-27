@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { getRanPoke } from '../../utilities/service/pokemon-service'
+import Spinner from '../Spinner/Spinner.jsx'
 
 const RandomPokemon = () => {
     const [pokeData, setPokeData] = useState([])
@@ -57,7 +58,12 @@ const RandomPokemon = () => {
         </ul>
       </div>
     ) : (
-      <p className="loading">Loading...</p>
+      <div className="w-max mx-auto mt-[100px]">
+        <div className="flex justify-center">
+        <Spinner/>
+        </div>
+        <p className="my-4 text-2xl">Loading...</p>
+      </div>
     )}
   </div>
   )
