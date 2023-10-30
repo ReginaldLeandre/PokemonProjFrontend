@@ -9,16 +9,16 @@ const Nav = () => {
     return (
         <div className="flex ">
             <Link to='/'>
-            <img className="ml-4 h-[50px]" src={Home} alt="Pokemon"/>
+            <img className="ml-4 h-[50px] hover:scale-110" src={Home} alt="Pokemon"/>
             </Link>
             <Link to="/pokeballs">
-            <img className="h-[50px]" src={PokeBalls} alt="Pokeballs"/>
+            <img className="h-[50px] hover:scale-110" src={PokeBalls} alt="Pokeballs"/>
             </Link>
             <Link to="/search">
-            <img className="h-[50px]" src={Search} alt="Find Pokemon"/>
+            <img className="h-[50px] hover:scale-110" src={Search} alt="Find Pokemon"/>
             </Link>
             <Link to="/encounter">
-            <img className="h-[50px]" src={Encounter} alt="Encounter"/>
+            <img className="h-[50px] hover:scale-110" src={Encounter} alt="Encounter"/>
             </Link>
         </div>
     )
