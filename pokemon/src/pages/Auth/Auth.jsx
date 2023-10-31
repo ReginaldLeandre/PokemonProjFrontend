@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from '../../data'
 
 import { setUserToken, clearUserToken } from "../../utilities/token/auth-token"
@@ -9,6 +9,7 @@ import LoginForm from "../../components/LoginForm/LoginForm"
 function Auth() {
   const { setAuth, setUser } = useContext(UserContext)
   // console.log(setAuth, setUser)
+  const [showRegisterForm, setShowRegisterForm] = useState(false)
 
   const handleRegisterUser = async (data) => {
     try {
@@ -46,10 +47,21 @@ function Auth() {
   }
 
   return (
+    // <section className="container">
+    //   <RegisterForm signUp={handleRegisterUser} />
+    //   <LoginForm signIn={handleLoginUser} />
+    // </section>
     <section className="container">
+    <div>
+      <button onClick={() => setShowRegisterForm(true)}>Sign Up</button>
+      <button onClick={() => setShowRegisterForm(false)}>Login</button>
+    </div>
+    {showRegisterForm ? (
       <RegisterForm signUp={handleRegisterUser} />
+    ) : (
       <LoginForm signIn={handleLoginUser} />
-    </section>
+    )}
+  </section>
   )
 }
 

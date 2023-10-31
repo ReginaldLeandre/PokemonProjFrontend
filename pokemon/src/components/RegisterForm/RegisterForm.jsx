@@ -10,11 +10,7 @@ const RegisterForm = ({ signUp }) => {
     e.preventDefault()
     const createdUserToken = await signUp(input)
 
-    if (createdUserToken.token) {
-      navigate("/people")
-    } else {
-      navigate("/")
-    }
+    
     setInput(initialState)
   }
 
@@ -26,7 +22,7 @@ const RegisterForm = ({ signUp }) => {
     <>
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">UserName: </label>
+        <label htmlFor="username">Username: </label>
         <input
           id="username"
           name="username"

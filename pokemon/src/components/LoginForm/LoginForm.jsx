@@ -11,7 +11,7 @@ const LoginForm = ({ signIn }) => {
     const createdUserToken = await signIn(input)
 
     if (createdUserToken.token) {
-      navigate("/people")
+      navigate("/")
     } else {
       navigate("/")
     }
@@ -44,7 +44,7 @@ const LoginForm = ({ signIn }) => {
         />
         <br />
         <br />
-        <input type="submit" value="Sign Up" />
+        <input type="submit" value="Log In" />
       </form>
     </>
   )

@@ -1,9 +1,9 @@
-const BASE_URL = process.env.REACT_APP_AUTH_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 const authURL = `${BASE_URL}/auth`
 
 
 export async function registerUser(data) {
-  const url = `${authURL}/auth/register`
+  const url = `${authURL}/register`
   const options = {
       method: "POST",
       headers: {
