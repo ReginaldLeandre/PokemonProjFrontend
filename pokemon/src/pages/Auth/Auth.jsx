@@ -21,7 +21,7 @@ function Auth() {
         setUser(parsedUser.user)
         // adds a boolean cast of the responses isAuthenticated prop
       } else {
-        throw `Server Error: ${parsedUser.err}`
+        throw `This is the Handle Sign Error: ${parsedUser.err}`
       }
     } catch (err) {
       console.log(err)
@@ -37,7 +37,7 @@ function Auth() {
         setUserToken(parsedUser.token)
         setUser(parsedUser.user)
       } else {
-        throw `Server Error: ${parsedUser.err}`
+        throw `This is the Handle Login Error: ${parsedUser.err}`
       }
     } catch (err) {
       console.log(err)

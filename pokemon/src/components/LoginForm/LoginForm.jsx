@@ -10,10 +10,10 @@ const LoginForm = ({ signIn }) => {
     e.preventDefault()
     const createdUserToken = await signIn(input)
 
-    if (createdUserToken.token) {
-      navigate("/")
+    if (createdUserToken && createdUserToken.token) {
+      navigate("/user/profile")
     } else {
-      navigate("/")
+      navigate("/*")
     }
     setInput(initialState)
   }

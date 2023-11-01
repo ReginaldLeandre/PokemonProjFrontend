@@ -9,7 +9,11 @@ const RegisterForm = ({ signUp }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const createdUserToken = await signUp(input)
-
+    if (createdUserToken && createdUserToken.token) {
+      navigate("/user/profile")
+    } else {
+      navigate("/*")
+    }
     
     setInput(initialState)
   }

@@ -15,7 +15,7 @@ const DropDown = () => {
     <div className="flex flex-col dropdownProfile">
         <ul className="flex flex-col gap-2">
             <li className="hover:bg-[gray] rounded-md"><Link to={'/user/profile'}>Profile</Link></li>
-            <li className="hover:bg-[gray] rounded-md px-1" onClick={handleLogOut}>Log Out</li>
+            <li className="hover:bg-[gray] rounded-md px-1" ><button onClick={handleLogOut}>Log Out</button></li>
         </ul>
 
     </div>
