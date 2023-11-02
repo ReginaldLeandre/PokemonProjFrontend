@@ -37,6 +37,7 @@ const RegisterForm = ({ signUp }) => {
         <br />
         <label htmlFor="password">Password: </label>
         <input
+          type="password"
           id="password"
           name="password"
           value={input.password}
