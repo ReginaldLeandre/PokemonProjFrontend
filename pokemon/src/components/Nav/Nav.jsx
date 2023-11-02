@@ -32,16 +32,18 @@ const Nav = () => {
             <Link to="/encounter">
             <img className="h-[50px] hover:scale-110" src={Encounter} alt="Encounter"/>
             </Link>
-            <Link to="/auth" className="ml-auto mr-6 my-auto text-xl">
-            <p>Sign In</p>
-            </Link>
+            
             <div className="my-auto ml-auto mr-6 border-[1px] border-[black] rounded-lg px-2 pt-1 hover:bg-[gray]">
                 <button onClick={() => seOpenProfile((prev) => !prev)}>
                     <FaBars />
                 </button>
             </div>
             </div>
-            ) : (<div></div>)
+            ) : (<div className="ml-auto mr-6">
+                <Link to="/auth">
+                    <p className="rounded-lg hover:bg-poke-blue bg-poke-darkblue text-white font-bold mt-2 py-1 px-2 text-xl">Sign In</p>
+                </Link>
+            </div>)
             }
             
 
