@@ -1,16 +1,10 @@
 import React from 'react'
 import EncounterMain from '../../components/EncounterMain/EncounterMain'
-import EncounterBag from '../../components/EncounterBag/EncounterBag'
 
 const Encounter = () => {
   return (
-    <div className="">
-      <div className="">
+    <div>
         <EncounterMain/>
-      </div>
-      <div className="">
-        <EncounterBag/>
-      </div>
     </div>
   )
 }
