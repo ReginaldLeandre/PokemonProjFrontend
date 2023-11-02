@@ -23,7 +23,7 @@ const RegisterForm = ({ signUp }) => {
   }
 
   return (
-    <div className="text-lg w-max mx-auto p-10 bg-poke-lightblue">
+    <div className="text-lg w-max mx-auto p-10 pt-8 bg-poke-lightblue">
       <h1 className="text-2xl mb-4">Register</h1>
       <form onSubmit={handleSubmit} className="flex flex-col w-max mx-auto">
         <div className="my-2">

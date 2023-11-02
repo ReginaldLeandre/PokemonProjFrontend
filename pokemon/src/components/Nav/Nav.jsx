@@ -32,7 +32,6 @@ const Nav = () => {
             <Link to="/encounter">
             <img className="h-[50px] hover:scale-110" src={Encounter} alt="Encounter"/>
             </Link>
-            
             <div className="my-auto ml-auto mr-6 border-[1px] border-[black] rounded-lg px-2 pt-1 hover:bg-[gray]">
                 <button onClick={() => seOpenProfile((prev) => !prev)}>
                     <FaBars />
