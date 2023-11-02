@@ -11,6 +11,7 @@ module.exports = {
         'poke-darkblue':'rgb(14, 37, 81)', 
         'poke-lightblue': 'rgb(183, 222, 253)', 
         'poke-lightyellow': 'rgb(255, 220, 135)',
+        'poke-whiteyellow': 'rgb(255, 228, 168)',
         'normal': '#F5F5DC', 
         'fighting' : '#D3D3D3',
         'flying': '#87CEEB',

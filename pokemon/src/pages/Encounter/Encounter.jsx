@@ -1,8 +1,11 @@
 import React from 'react'
+import EncounterMain from '../../components/EncounterMain/EncounterMain'
 
 const Encounter = () => {
   return (
-    <div>Encounter</div>
+    <div>
+        <EncounterMain/>
+    </div>
   )
 }
 

@@ -62,7 +62,7 @@ const RandomPokemon = () => {
         <div className="flex justify-center">
         <Spinner/>
         </div>
-        <p className="my-4 text-2xl">Loading...</p>
+        <p className="my-4 text-2xl font-[PKMN]">Loading...</p>
       </div>
     )}
   </div>
