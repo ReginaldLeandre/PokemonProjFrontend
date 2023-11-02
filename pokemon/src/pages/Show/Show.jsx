@@ -75,8 +75,8 @@ const Show = () => {
                 </tr>
               {pokeData.abilities && pokeData.abilities.map((pokeAbility, index)=>(
                 <tr key={index}>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.name.charAt(0).toUpperCase() + pokeAbility.name.slice(1)}</td>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.description}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
+                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
                 </tr>
               ))}
               </table>
@@ -92,7 +92,7 @@ const Show = () => {
         <div className="flex justify-center">
         <Spinner/>
         </div>
-        <p className="my-4 text-2xl">Loading...</p>
+        <p className="my-4 text-2xl font-[PKMN]">Loading...</p>
       </div>
     )}
   </div>
