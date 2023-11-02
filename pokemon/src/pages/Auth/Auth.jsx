@@ -53,8 +53,8 @@ function Auth() {
     // </section>
     <section className="container">
     <div>
-      <button onClick={() => setShowRegisterForm(true)}>Sign Up</button>
-      <button onClick={() => setShowRegisterForm(false)}>Login</button>
+      <button onClick={() => setShowRegisterForm(true)} className="border-[1px] border-[black] py-1 px-4">Sign Up</button>
+      <button onClick={() => setShowRegisterForm(false)} className="border-[1px] border-[black] py-1 px-4">Login</button>
     </div>
     {showRegisterForm ? (
       <RegisterForm signUp={handleRegisterUser} />

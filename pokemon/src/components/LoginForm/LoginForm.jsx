@@ -45,7 +45,7 @@ const LoginForm = ({ signIn }) => {
         />
         <br />
         <br />
-        <input type="submit" value="Log In" />
+        <input className="hover:cursor-pointer bg-poke-blue py-1 px-8 text-white font-bold rounded-md" type="submit" value="Log In"/>
       </form>
     </>
   )
