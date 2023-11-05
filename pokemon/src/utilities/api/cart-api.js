@@ -21,10 +21,9 @@ export async function create() {
 
 
 
-
-
+// router.get('/index', cartController.view)
 export async function show() {
-    const res = await fetch(`${pokeURL}/${id}`, {
+    const res = await fetch(`${cartURL}/index`, {
         method: "GET",
         headers: {
             Authorization: `Bearer ${getUserToken()}`
