@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link} from 'react-router-dom'
 import Home from '../../assets/Home.png'
 import PokeBalls from '../../assets/PokeBalls.png'
@@ -13,7 +13,10 @@ import { FaBars } from 'react-icons/fa'
 
 const Nav = () => {
     const [ openProfile, seOpenProfile] = useState(false)
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token")
+
+
+   
 
     return (
         <>

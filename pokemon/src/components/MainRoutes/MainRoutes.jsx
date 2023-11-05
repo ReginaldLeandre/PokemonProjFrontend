@@ -9,6 +9,10 @@ import UserShow from "../../pages/UserShow/UserShow"
 import Encounter from "../../pages/Encounter/Encounter"
 import Search from '../../pages/Search/Search'
 import Error404 from '../../pages/Error/Index'
+import CreateCart from '../../pages/Cart/CreateCart/CreateCart'
+import CartIndex from '../../pages/Cart/CartIndex/CartIndex'
+
+
 
 
 export default function MainRoutes(props) {
@@ -25,6 +29,8 @@ export default function MainRoutes(props) {
             <Route path='/user/profile' element={<UserShow />}/>
             <Route path='/search' element={<Search />}/>
             <Route path='/encounter' element={<Encounter />}/>
+            <Route path='/createCart' element={<CreateCart />}/>
+            <Route path='/indexCart' element={<CartIndex />}/>
             <Route path='/*' element={<Error404 />} />
             </Routes>
 
