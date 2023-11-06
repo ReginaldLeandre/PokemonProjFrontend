@@ -16,7 +16,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105">
+                    <button className="hover:scale-105" name="ballType" value="Poke Ball">
                         <img className="h-[40px]" src={cart} alt="add to cart icon"/>
                     </button>
                 </div> 
@@ -30,7 +30,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105">
+                    <button className="hover:scale-105" name="ballType" value="Great Ball">
                         <img className="h-[40px]" src={cart} alt="add to cart icon"/>
                     </button>
                 </div>
@@ -44,7 +44,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105">
+                    <button className="hover:scale-105" name="ballType" value="Ultra Ball">
                         <img className="h-[40px]" src={cart} alt="add to cart icon"/>
                     </button>
                 </div>
@@ -58,7 +58,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105">
+                    <button className="hover:scale-105" name="ballType" value="Master Ball">
                         <img className="h-[40px]" src={cart} alt="add to cart icon"/>
                     </button>
                 </div>
