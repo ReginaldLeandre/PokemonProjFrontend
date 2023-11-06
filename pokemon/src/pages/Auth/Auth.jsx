@@ -1,15 +1,19 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { UserContext } from '../../data'
 
 import { setUserToken, clearUserToken } from "../../utilities/token/auth-token"
 import { signIn, signUp } from "../../utilities/service/auth-service"
 import RegisterForm from "../../components/RegisterForm/RegisterForm"
 import LoginForm from "../../components/LoginForm/LoginForm"
+import { useNavigate } from "react-router"
 
 function Auth() {
   const { setAuth, setUser } = useContext(UserContext)
   // console.log(setAuth, setUser)
   const [showRegisterForm, setShowRegisterForm] = useState(false)
+  const token = localStorage.getItem("token")
+  const nav = useNavigate()
+
 
   const handleRegisterUser = async (data) => {
     try {
@@ -46,11 +50,15 @@ function Auth() {
     }
   }
 
+  useEffect(() => {
+    if(token){
+      nav('/user/profile')
+    }
+  }, [])
+
   return (
-    // <section className="container">
-    //   <RegisterForm signUp={handleRegisterUser} />
-    //   <LoginForm signIn={handleLoginUser} />
-    // </section>
+    <div>
+    { !token ? (
     <section className="container">
     <div>
       <button onClick={() => setShowRegisterForm(true)} className="border-[1px] border-[black] py-1 px-4 font-[PKMN]">Sign Up</button>
@@ -61,7 +69,12 @@ function Auth() {
     ) : (
       <LoginForm signIn={handleLoginUser} />
     )}
-  </section>
+  </section> ) : (
+    <div>
+    </div>
+  )
+    }
+    </div>
   )
 }
 

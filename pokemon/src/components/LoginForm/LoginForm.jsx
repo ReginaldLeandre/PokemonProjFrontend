@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const LoginForm = ({ signIn }) => {
   const initialState = { username: "", password: "" }
@@ -9,14 +9,15 @@ const LoginForm = ({ signIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const createdUserToken = await signIn(input)
-
-    if (createdUserToken && createdUserToken.token) {
-      navigate("/user/profile")
-    } else {
-      navigate("/*")
-    }
-    setInput(initialState)
   }
+    
+
+  const token = localStorage.getItem("token")
+    useEffect(() => {
+      if(token) {
+        navigate('/user/profile')
+      }
+    }, [])
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value })

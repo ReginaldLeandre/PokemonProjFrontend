@@ -46,10 +46,10 @@ export async function catchPokemon() {
 }
 
 
-// router.get('/encounter', pokemonCtrl.encounter)
+// router.get('/pokemon/encounter', pokemonCtrl.encounter)
 export async function encounterPokemon() {
-    const res = await fetch(`${pokeURL}/encounter`, {
-        method: "GET"
+    const res = await fetch(`${pokeURL}/pokemon/encounter`, {
+      method: "GET"
   })
 
   if(res.ok){
