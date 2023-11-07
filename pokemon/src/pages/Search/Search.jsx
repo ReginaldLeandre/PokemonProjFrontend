@@ -19,16 +19,15 @@ const Search = () => {
     try {
       const searchResponse = await searchPoke(query)
 
-      console.log("This is the search response: ", searchResponse)
-
-      if (searchResponse.ok) {
+      if (searchResponse) {
+        console.log("This is the search response: ", searchResponse)
         setSearchResults(searchResponse)
         setLoading(false)
         console.log('This is the search results: ', searchResults)
       }
       
     } catch (error) {
-      console.error('Error searching characters: ', error)
+      console.error('Error searching Pokemon: ', error)
   }
 }
 
@@ -47,20 +46,20 @@ const Search = () => {
         />
         <button type="submit">Search</button>
       </form>
-      {loading ? (
-        <div className="w-max mx-auto mt-[100px]">
-        <div className="flex justify-center">
-        <Spinner/>
-        </div>
-        <p className="my-4 text-2xl font-[PKMN]">Search a Pokemon...</p>
-      </div>
+      {!loading ? (
+         <div>
+         <Link to={`/poke/${searchResults.pokeDexId}`}>
+           {searchResults.home}
+           {searchResults.pokemonName}
+         </Link>
+       </div>
       ) : (
-        <div>
-          <Link to={`/poke/${searchResults.pokeDexId}`}>
-            {searchResults.home}
-            {searchResults.pokemonName}
-          </Link>
-        </div>
+          <div className="w-max mx-auto mt-[100px]">
+          <div className="flex justify-center">
+          <Spinner/>
+          </div>
+          <p className="my-4 text-2xl font-[PKMN]">Search a Pokemon...</p>
+          </div>
       )}
     </div>
   )
