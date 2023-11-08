@@ -58,21 +58,26 @@ function Auth() {
 
   return (
     <div>
-    { !token ? (
-    <section className="container">
-    <div>
-      <button onClick={() => setShowRegisterForm(true)} className="border-[1px] border-[black] py-1 px-4 font-[PKMN]">Sign Up</button>
-      <button onClick={() => setShowRegisterForm(false)} className="border-[1px] border-[black] py-1 px-4 font-[PKMN]">Login</button>
-    </div>
+    { !token && (
+    <section className="m-10">
     {showRegisterForm ? (
       <RegisterForm signUp={handleRegisterUser} />
     ) : (
       <LoginForm signIn={handleLoginUser} />
     )}
-  </section> ) : (
-    <div>
-    </div>
-  )
+    <div className="mt-10 mx-auto w-max flex">
+        {!showRegisterForm ? 
+          (<div className="flex">
+              <p className="font-[PKMN] mr-2">Don't have an account?</p>
+              <button onClick={() => setShowRegisterForm(true)} className="font-[PKMN] underline hover:text-poke-blue">Sign Up</button>
+            </div>)
+        : (<div className="flex">
+              <p className="font-[PKMN] mr-2">Have an account?</p>
+              <button onClick={() => setShowRegisterForm(false)} className="font-[PKMN] underline hover:text-poke-blue">Login</button>
+          </div>)
+        }
+      </div>
+  </section> ) 
     }
     </div>
   )

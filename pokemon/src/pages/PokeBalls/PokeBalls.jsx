@@ -3,7 +3,7 @@ import pokeball from '../../assets/pokeballs/pokeball.webp'
 import greatball from '../../assets/pokeballs/greatball.webp'
 import ultraball from '../../assets/pokeballs/ultraball.webp'
 import masterball from '../../assets/pokeballs/masterball.webp'
-import cart from '../../assets/cart.png'
+import {BsCartPlus} from 'react-icons/bs'
 
 const PokeBalls = () => {
     return (
@@ -17,7 +17,7 @@ const PokeBalls = () => {
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
                     <button className="hover:scale-105" name="ballType" value="Poke Ball">
-                        <img className="h-[40px]" src={cart} alt="add to cart icon"/>
+                        <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div> 
                 <p className="border-t-[2px] p-2 pt-4">A device for catching wild Pokémon. It's thrown like a ball, comfortably encapsulating its target.</p>
@@ -31,7 +31,7 @@ const PokeBalls = () => {
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
                     <button className="hover:scale-105" name="ballType" value="Great Ball">
-                        <img className="h-[40px]" src={cart} alt="add to cart icon"/>
+                        <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
                 <p className="border-t-[2px] p-2">A type of Poké Ball that has a 50% higher chance to successfully catch a Pokémon than that of a regular Poké Ball.</p>
@@ -45,7 +45,7 @@ const PokeBalls = () => {
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
                     <button className="hover:scale-105" name="ballType" value="Ultra Ball">
-                        <img className="h-[40px]" src={cart} alt="add to cart icon"/>
+                        <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
                 <p className="border-t-[2px] p-2">A Poké Ball that has a 2x catch rate modifier, double of that of a standard Poké Ball and 33% more of that of a Great Ball.</p>
@@ -59,7 +59,7 @@ const PokeBalls = () => {
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
                     <button className="hover:scale-105" name="ballType" value="Master Ball">
-                        <img className="h-[40px]" src={cart} alt="add to cart icon"/>
+                        <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
                 <p className="border-t-[2px] px-3 pt-8">A type of Poké Ball that is able to catch any type of Pokémon without fail.</p>
