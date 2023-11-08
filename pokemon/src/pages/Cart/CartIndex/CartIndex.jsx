@@ -29,19 +29,17 @@ const CartIndex = () => {
       }, [])
 
 
-
   return (
     <div>
-      <div>CartIndex</div>
       {!loading? (
-        <div>
+        <div className="mt-6">
           {cartData.pokeBallItems.length || cartData.pokemonItems.length ? (
             <div>
               {cartData.pokeBallItems.map((p) => (
             <div></div>
           ))}
               {cartData.pokemonItems.map((p) => (
-            <div className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[66vw] min-w-max mx-auto flex mb-6 text-lg">
+            <div className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
               <div>
                 <img className="m-4 bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200" src={p.pokemon.front} alt={p.pokemon.pokemonName}/>
               </div>
