@@ -7,7 +7,7 @@ import Encounter from '../../assets/Encounter.png'
 import { useState } from 'react'
 import DropDown from '../DropDown/DropDown'
 import { FaBars } from 'react-icons/fa'
-import {BsBoxArrowInRight, BsCart } from 'react-icons/bs'
+import { BsCart } from 'react-icons/bs'
 
 import { showCart } from '../../utilities/service/cart-service'
 
