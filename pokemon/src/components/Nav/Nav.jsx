@@ -4,10 +4,11 @@ import Home from '../../assets/Home.png'
 import PokeBalls from '../../assets/PokeBalls.png'
 import Search from '../../assets/Search.png'
 import Encounter from '../../assets/Encounter.png'
-import CartCheckout from '../../assets/cartcheckout.png'
 import { useState } from 'react'
 import DropDown from '../DropDown/DropDown'
 import { FaBars } from 'react-icons/fa'
+import {BsBoxArrowInRight, BsCart } from 'react-icons/bs'
+
 import { showCart } from '../../utilities/service/cart-service'
 
 
@@ -58,11 +59,12 @@ const Nav = () => {
             </div>
             <div className="flex gap-10">
                 { token && !loading && (
-                    <div className="">
+                    <div className="my-auto">
                         <Link to="/indexCart">
-                            <img className="w-10 mt-1 inline" src={CartCheckout} alt="shopping cart"/>
+                            <BsCart className="text-[36px] inline"/> 
+                            <span className="ml-2">Cart</span>
                         </Link>
-                        {cartData && (<span className="ml-2">({cartData.totalItems})</span>)}
+                        {cartData && (<span className="ml-1">({cartData.totalItems})</span>)}
                     </div>
                 )}
                 { token? (
