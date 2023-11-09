@@ -38,3 +38,18 @@ export async function show() {
 }
 
 
+
+export async function addPokeToCart() {
+  const res = await fetch(`${cartURL}/index`, {
+      method: "Put",
+      headers: {
+          Authorization: `Bearer ${getUserToken()}`
+        }
+})
+if(res.ok){
+  return res.json()
+}
+else {
+  return new Error("Invalid Request")
+}
+}

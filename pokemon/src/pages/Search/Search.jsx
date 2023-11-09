@@ -49,9 +49,22 @@ const Search = () => {
       {!loading ? (
          <div>
          <Link to={`/poke/${searchResults.pokeDexId}`}>
-           {searchResults.home}
-           {searchResults.pokemonName}
-         </Link>
+
+                <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
+                <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
+                  src={searchResults.home}
+                  alt={searchResults.pokemonName}
+                />
+                <div className="bg-poke-lightyellow flex justify-around">
+                  <div>
+                    <h3 className="pt-2">{searchResults.pokemonName.charAt(0).toUpperCase() + searchResults.pokemonName.slice(1)}</h3>
+                    <h4 className="pb-2">#{searchResults.pokeDexId}</h4>
+                  </div>
+                </div>
+                </div>
+              <div className="w-max m-auto p-1 rounded my-2 text-xl">
+              </div>
+              </Link>
        </div>
       ) : (
           <div className="w-max mx-auto mt-[100px]">
