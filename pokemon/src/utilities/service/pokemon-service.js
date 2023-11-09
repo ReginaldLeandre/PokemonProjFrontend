@@ -46,3 +46,14 @@ export async function encounterPoke() {
         return err
     }
 }
+
+
+export async function searchPoke(query) {
+    try{
+        const data = await pokeApi.searchPokemon(query)
+        return data
+    }
+    catch(err) {
+        return err
+    }
+}

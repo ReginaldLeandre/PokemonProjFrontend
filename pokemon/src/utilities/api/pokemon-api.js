@@ -59,3 +59,17 @@ export async function encounterPokemon() {
     return new Error("Invalid Request")
   }
 }
+
+
+//router.get('/pokemon/search', pokemonCtrl.search)
+export async function searchPokemon(query) {
+  const res = await fetch(`${pokeURL}/pokemon/search?pokemonName=${query}`, {
+    method: "GET"
+  })
+  if(res.ok){
+    return res.json()
+  }
+  else {
+    return new Error("Invalid Request")
+  }
+}
