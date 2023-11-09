@@ -24,3 +24,23 @@ export async function showCart() {
         return err
     }
 }
+
+export async function minusPokeCart(pokemonName) {
+    try {
+        const data = await cartApi.addPokeToCart(pokemonName) 
+        return data
+    }
+    catch(err) {
+        return err
+    }
+}
+
+export async function plusPokeCart(pokemonName) {
+    try {
+        const data = await cartApi.remPokeFromCart(pokemonName) 
+        return data
+    }
+    catch(err) {
+        return err
+    }
+}

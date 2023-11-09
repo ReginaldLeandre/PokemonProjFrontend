@@ -40,7 +40,7 @@ const Search = () => {
         handleSearch(searchData) }}>
         <input
           type="text"
-          placeholder="Search a Pokemon(Must be correct spelling)..."
+          placeholder="Pokemon must have correct spelling)..."
           value={searchData}
           onChange={handleInputChange}
         />
