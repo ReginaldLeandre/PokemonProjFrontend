@@ -49,6 +49,7 @@ const Search = () => {
       {!loading ? (
          <div>
          <Link to={`/poke/${searchResults.pokeDexId}`}>
+
                 <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
                 <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
                   src={searchResults.home}
