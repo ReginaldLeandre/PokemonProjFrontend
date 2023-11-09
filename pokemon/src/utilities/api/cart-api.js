@@ -44,12 +44,12 @@ export async function show() {
 
 // router.put('/addPoke', requireToken, cartController.plusle)
 export async function addPokeToCart(pokemonName) {
-  const res = await fetch(`${cartURL}/addPoke`, {
+  console.log("this is the api: ",pokemonName)
+  const res = await fetch(`${cartURL}/addPoke?pokemonName=${pokemonName}`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${getUserToken()}`
-    },
-    body: JSON.stringify({ pokemonName }) 
+    }
   })
   if (res.ok) {
     return res.json()
@@ -62,12 +62,12 @@ export async function addPokeToCart(pokemonName) {
 
 // router.put('removePoke', requireToken, cartController.minun)
 export async function remPokeFromCart(pokemonName) {
-  const res = await fetch(`${cartURL}/removePoke`, {
+  console.log("this is the api: ",pokemonName)
+  const res = await fetch(`${cartURL}/removePoke?pokemonName=${pokemonName}`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${getUserToken()}`
-    },
-    body: JSON.stringify({ pokemonName })
+    }
   })
   if (res.ok) {
     return res.json()

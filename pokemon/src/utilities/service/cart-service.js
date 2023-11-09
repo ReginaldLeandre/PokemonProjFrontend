@@ -25,8 +25,9 @@ export async function showCart() {
     }
 }
 
-export async function minusPokeCart(pokemonName) {
+export async function plusPokeCart(pokemonName) {
     try {
+        console.log("this is the service: ",pokemonName)
         const data = await cartApi.addPokeToCart(pokemonName) 
         return data
     }
@@ -35,8 +36,9 @@ export async function minusPokeCart(pokemonName) {
     }
 }
 
-export async function plusPokeCart(pokemonName) {
+export async function minusPokeCart(pokemonName) {
     try {
+        console.log("this is the service: ",pokemonName)
         const data = await cartApi.remPokeFromCart(pokemonName) 
         return data
     }

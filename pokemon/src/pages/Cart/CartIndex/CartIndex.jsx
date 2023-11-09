@@ -26,16 +26,18 @@ const CartIndex = () => {
 
   const handleDecrease = async (pokemonName) => {
     try {
-      await minusPokeCart({ pokemonName })
+      console.log("this is the handleDecrease: ",pokemonName)
+      await minusPokeCart(pokemonName) 
       refreshCart()
     } catch (error) {
       console.error(error)
     }
   }
-
+  
   const handleIncrease = async (pokemonName) => {
     try {
-      await plusPokeCart({ pokemonName })
+      console.log("this is the handleIncrease: ",pokemonName)
+      await plusPokeCart(pokemonName)
       refreshCart()
     } catch (error) {
       console.error(error)
@@ -52,7 +54,7 @@ const CartIndex = () => {
                 <div>
                   <h1>Your Cart</h1>
                 </div>
-                <p>Total Price: {cartData.totalPrice}</p>
+                <p>Total Price: ${cartData.totalPrice}</p>
               </div>
               {cartData.pokeBallItems.map((p, index) => (
                 <div key={index}>
