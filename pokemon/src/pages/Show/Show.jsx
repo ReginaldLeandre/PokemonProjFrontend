@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { show } from '../../utilities/service/pokemon-service'
 import './Show.css'
 import Spinner from '../../components/Spinner/Spinner'
-
+import { addPokeShow } from '../../utilities/service/cart-service'
 
 
 const Show = () => {
@@ -33,7 +33,14 @@ const Show = () => {
         }
       }, [])
 
-
+      const handleAddToCart = async (pokemonName) => {
+        try {
+          console.log("this is the handleAddToCart: ",pokemonName)
+          await addPokeShow(pokemonName) 
+        } catch (error) {
+          console.error(error)
+        }
+      }
 
   return (
     <div className="">
@@ -53,6 +60,7 @@ const Show = () => {
               <p>{pokeType.charAt(0).toUpperCase() + pokeType.slice(1)}</p>
               </li>
           ))}
+          <button onClick={() => handleAddToCart(pokeData.pokemonName)}>Add {pokeData.pokemonName} to Cart</button>
           </ul>
         </div>
           <div>

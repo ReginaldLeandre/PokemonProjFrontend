@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { showCart, minusPokeCart, plusPokeCart } from '../../../utilities/service/cart-service'
 import Spinner from '../../../components/Spinner/Spinner'
+import { Link } from 'react-router-dom'
 
 const CartIndex = () => {
   const [cartData, setCartData] = useState(null)
@@ -64,7 +65,9 @@ const CartIndex = () => {
               {cartData.pokemonItems.map((p, index) => (
                 <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
                   <div>
+                    <Link to={`/poke/${p.pokemon.pokeDexId}`}>
                     <img className="m-4 bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200" src={p.pokemon.front} alt={p.pokemon.pokemonName} />
+                    </Link>
                   </div>
                   <div className="w-full my-auto">
                     <p className="mb-5">{p.pokemon.pokemonName[0].toUpperCase() + p.pokemon.pokemonName.slice(1)}</p>

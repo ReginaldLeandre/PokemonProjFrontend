@@ -76,3 +76,21 @@ export async function remPokeFromCart(pokemonName) {
   }
 }
 
+
+
+// router.put('/addPokemon/:id', requireToken, cartController.addPokeId)
+export async function addPokeId(pokemonName) {
+  console.log("this is the api: ", pokemonName)
+  const res = await fetch(`${cartURL}/addPokemonPage?pokemonName=${pokemonName}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+  if (res.ok) {
+    return res.json()
+  } else {
+    return new Error("Invalid Request")
+  }
+}
+
