@@ -69,11 +69,11 @@ function Auth() {
         {!showRegisterForm ? 
           (<div className="flex">
               <p className="font-[PKMN] mr-2">Don't have an account?</p>
-              <button onClick={() => setShowRegisterForm(true)} className="font-[PKMN] underline hover:text-poke-blue">Sign Up</button>
+              <button onClick={() => setShowRegisterForm(true)} className="font-[PKMN] underline text-blue-400 hover:text-poke-blue">Sign Up</button>
             </div>)
         : (<div className="flex">
               <p className="font-[PKMN] mr-2">Have an account?</p>
-              <button onClick={() => setShowRegisterForm(false)} className="font-[PKMN] underline hover:text-poke-blue">Login</button>
+              <button onClick={() => setShowRegisterForm(false)} className="font-[PKMN] underline text-blue-400 hover:text-poke-blue">Login</button>
           </div>)
         }
       </div>

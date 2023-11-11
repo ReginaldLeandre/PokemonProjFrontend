@@ -1,16 +1,18 @@
 import { useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { useCart } from "../../data/CartContext"
 
 const LoginForm = ({ signIn }) => {
   const initialState = { username: "", password: "" }
   const [input, setInput] = useState(initialState)
   const navigate = useNavigate()
+  const {refreshCart} = useCart()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const createdUserToken = await signIn(input)
+    refreshCart()
   }
-    
 
   const token = localStorage.getItem("token")
     useEffect(() => {

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import Spinner from '../../../components/Spinner/Spinner'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../../data/CartContext'
+import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
 
 const CartIndex = () => {
   const { cartData, loading, refreshCart, handleDecrease, handleIncrease } = useCart()
@@ -39,22 +40,26 @@ const CartIndex = () => {
               ))}
               {cartData.pokemonItems.map((p, index) => (
                 <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
-                  <div>
+                  <div className="my-auto">
                     <Link to={`/poke/${p.pokemon.pokeDexId}`}>
-                    <img className="m-4 bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200" src={p.pokemon.front} alt={p.pokemon.pokemonName} />
+                    <img className="mx-4 bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200" src={p.pokemon.front} alt={p.pokemon.pokemonName} />
                     </Link>
                   </div>
                   <div className="w-full my-auto">
-                    <p className="mb-5">{p.pokemon.pokemonName[0].toUpperCase() + p.pokemon.pokemonName.slice(1)}</p>
+                    <p className="mt-2 mb-5">{p.pokemon.pokemonName[0].toUpperCase() + p.pokemon.pokemonName.slice(1)}</p>
                     <p className="mb-5">Price: ${p.pokemon.price}</p>
-                    <p className="">
-                      Quantity: <span className="border-[1px] border-[gray] bg-white p-2">{p.quantity}</span>
-                    </p>
+                    
+                  </div>
+                  <div className="flex my-auto">
+                      <p className="my-auto mr-2">Qty: </p>
+                    <div className="my-auto">
+                      <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] ml-2 mb-1"/>
+                      <span className="border-[1px] border-[gray] bg-white p-1">{p.quantity}</span>
+                      <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] ml-2 mt-1"/>
+                    </div>
                   </div>
                   <div className="flex align-center items-center">
                     <p className="m-4">${p.calcPrice}</p>
-                    <button onClick={() => handleDecrease(p.pokemon.pokemonName)}>Decrease</button>
-                    <button onClick={() => handleIncrease(p.pokemon.pokemonName)}>Increase</button>
                   </div>
                 </div>
               ))}
