@@ -64,7 +64,7 @@ const EncounterMain = () => {
         </div>
         <div className="w-max mt-10">
             {openBag &&
-            <EncounterBag/>
+            <EncounterBag pokemonName={pokeData.pokemonName}/>
             }
         </div>
         </div>

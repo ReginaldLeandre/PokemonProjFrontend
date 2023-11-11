@@ -1,6 +1,9 @@
 import React from 'react'
 
-const EncounterBag = () => {
+const EncounterBag = (props) => {
+
+    const { pokemonName } = props
+
     return (
         <div className="border-[2px] border-[black] w-[30vw] lg:w-[300px] font-[PKMN]">
             <div className="p-4">Bag</div>
