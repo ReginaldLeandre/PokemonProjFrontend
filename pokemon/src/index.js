@@ -5,12 +5,15 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter as Router } from "react-router-dom"
 import { CartProvider } from './data/CartContext'
+import { DropDownProvider } from './data/DropDownContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <Router>
     <CartProvider>
-      <App /> 
+      <DropDownProvider>
+        <App /> 
+      </DropDownProvider>
     </CartProvider>
     
   </Router>

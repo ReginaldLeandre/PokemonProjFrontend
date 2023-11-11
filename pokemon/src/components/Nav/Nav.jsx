@@ -9,11 +9,11 @@ import DropDown from '../DropDown/DropDown'
 import { FaBars } from 'react-icons/fa'
 import { BsCart } from 'react-icons/bs'
 import { useCart } from '../../data/CartContext'
-
+import { useDropDown }  from '../../data/DropDownContext'
 
 
 const Nav = () => {
-    const [ openDropdown, setOpenDropdown ] = useState(false)
+    const { openDropdown, handleOpenDrowndown, handleExtraDropDown} = useDropDown()
     const { cartData, loading } = useCart()
     const token = localStorage.getItem("token")
 
@@ -48,7 +48,7 @@ const Nav = () => {
                    </div>
                  )}
                 { token? (
-                    <div className="text-lg rounded-lg my-auto px-2 pt-1 mr-6 hover:bg-poke-grayblue" onClick={() => setOpenDropdown((prev) => !prev)}>
+                    <div className="text-lg rounded-lg my-auto px-2 pt-1 mr-6 hover:bg-poke-grayblue" onClick={() => handleOpenDrowndown()}>
                         <button>
                             <FaBars />
                         </button>
