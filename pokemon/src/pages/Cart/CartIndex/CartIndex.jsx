@@ -19,6 +19,8 @@ const CartIndex = () => {
                 <div>
                   <h1>Your Cart</h1>
                 </div>
+                <p>Sub Total: ${cartData.subTotal}</p>
+                <p>Sales Tax: ${cartData.salesTax}</p>
                 <p>Total Price: ${cartData.totalPrice}</p>
               </div>
               {cartData.pokeBallItems.map((p, index) => (
