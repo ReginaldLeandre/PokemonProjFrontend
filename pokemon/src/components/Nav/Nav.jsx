@@ -41,10 +41,11 @@ const Nav = () => {
                 { token && !loading && (
                      <div className="my-auto">
                      <Link to="/indexCart">
-                       <BsCart className="text-[36px] inline" />
-                       <span className="ml-2">Cart</span>
-                     </Link>
-                     {cartData && <span className="ml-1">({cartData.totalItems})</span>}
+                        <div className="my-auto">
+                            <BsCart className="text-[36px] inline mt-2" />
+                        {cartData && <span className="ml-[-10px] absolute h-6 w-6 bg-gradient-to-tr from-red-600 to-red-400 rounded-full text-white font-bold">{cartData.totalItems}</span>}
+                        </div>
+                    </Link>
                    </div>
                  )}
                 { token? (
