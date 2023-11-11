@@ -1,3 +1,5 @@
+import { getUserToken } from "../token/auth-token"
+
 const BASE_URL = process.env.REACT_APP_BASE_URL
 const pokeURL = `${BASE_URL}/api`
 
@@ -31,10 +33,13 @@ export async function getRandomPokemon() {
 
 
 
-// router.post('/catch', pokemonCtrl.catch)
-export async function catchPokemon() {
-    const res = await fetch(`${pokeURL}/catch`, {
-        method: "GET"
+// router.post('/pokmon/catch', pokemonCtrl.catch)
+export async function catchPokemon(pokemonName, ballType) {
+    const res = await fetch(`${pokeURL}/pokemon/catch?pokemonName=${pokemonName}&ballType=${ballType}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getUserToken()}`
+        }
   })
 
   if(res.ok){
@@ -73,3 +78,5 @@ export async function searchPokemon(query) {
     return new Error("Invalid Request")
   }
 }
+
+

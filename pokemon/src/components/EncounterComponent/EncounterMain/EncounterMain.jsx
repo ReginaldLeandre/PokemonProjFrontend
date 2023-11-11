@@ -1,10 +1,10 @@
 import React from 'react'
-import pokemonGrassBg from '../../assets/pokemon-grass-background.jpeg'
+import pokemonGrassBg from '../../../assets/pokemon-grass-background.jpeg'
 import { useNavigate } from 'react-router-dom'
 import EncounterBag from '../EncounterBag/EncounterBag'
 import { useState, useEffect } from 'react';
-import { encounterPoke } from '../../utilities/service/pokemon-service'
-import Spinner from '../Spinner/Spinner';
+import { encounterPoke } from '../../../utilities/service/pokemon-service'
+import Spinner from '../../Spinner/Spinner';
 
 const EncounterMain = () => {
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ const EncounterMain = () => {
     const [loading, setLoading] = useState(true)
     
     function handleRun() {
-        navigate('/')
+        window.location.reload()
     }
 
     function handleBag() {

@@ -1,5 +1,5 @@
 import React from 'react'
-import EncounterMain from '../../components/EncounterMain/EncounterMain'
+import EncounterMain from '../../components/EncounterComponent/EncounterMain/EncounterMain'
 
 const Encounter = () => {
   return (
