@@ -1,49 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { showCart, minusPokeCart, plusPokeCart } from '../../../utilities/service/cart-service'
+import React, { useState, useEffect, useContext } from 'react'
 import Spinner from '../../../components/Spinner/Spinner'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../../data/CartContext'
 
 const CartIndex = () => {
-  const [cartData, setCartData] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const { cartData, loading, refreshCart, handleDecrease, handleIncrease } = useCart()
 
-  const refreshCart = async () => {
-    try {
-      const cartResponse = await showCart()
-      if (cartResponse) {
-        setCartData(cartResponse)
-        setLoading(false)
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
-  useEffect(() => {
-    if (loading) {
-      refreshCart()
-    }
-  }, [loading])
-
-  const handleDecrease = async (pokemonName) => {
-    try {
-      console.log("this is the handleDecrease: ",pokemonName)
-      await minusPokeCart(pokemonName) 
-      refreshCart()
-    } catch (error) {
-      console.error(error)
-    }
-  }
   
-  const handleIncrease = async (pokemonName) => {
-    try {
-      console.log("this is the handleIncrease: ",pokemonName)
-      await plusPokeCart(pokemonName)
-      refreshCart()
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
   return (
     <div>
