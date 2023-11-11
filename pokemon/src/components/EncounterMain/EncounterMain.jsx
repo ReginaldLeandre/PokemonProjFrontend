@@ -39,7 +39,7 @@ const EncounterMain = () => {
         if(loading === true) {
           handleRequest()
         }
-      }, [])
+      }, [loading])
 
 
     return ( 
