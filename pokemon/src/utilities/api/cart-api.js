@@ -13,9 +13,9 @@ export async function create() {
         }
         })
         if (res.ok) {
-            return res.json();
+            return res.json()
           } else {
-            throw new Error("Invalid POST Request");
+            throw new Error("Invalid POST Request")
           }
         }
 
@@ -39,17 +39,58 @@ export async function show() {
 
 
 
-export async function addPokeToCart() {
-  const res = await fetch(`${cartURL}/index`, {
-      method: "Put",
-      headers: {
-          Authorization: `Bearer ${getUserToken()}`
-        }
-})
-if(res.ok){
-  return res.json()
+
+
+
+// router.put('/addPoke', requireToken, cartController.plusle)
+export async function addPokeToCart(pokemonName) {
+  console.log("this is the api: ",pokemonName)
+  const res = await fetch(`${cartURL}/addPoke?pokemonName=${pokemonName}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+  if (res.ok) {
+    return res.json()
+  } else {
+    return new Error("Invalid Request")
+  }
 }
-else {
-  return new Error("Invalid Request")
+
+
+
+// router.put('removePoke', requireToken, cartController.minun)
+export async function remPokeFromCart(pokemonName) {
+  console.log("this is the api: ",pokemonName)
+  const res = await fetch(`${cartURL}/removePoke?pokemonName=${pokemonName}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+  if (res.ok) {
+    return res.json()
+  } else {
+    return new Error("Invalid Request")
+  }
 }
+
+
+
+// router.put('/addPokemon/:id', requireToken, cartController.addPokeId)
+export async function addPokeId(pokemonName) {
+  console.log("this is the api: ", pokemonName)
+  const res = await fetch(`${cartURL}/addPokemonPage?pokemonName=${pokemonName}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+  if (res.ok) {
+    return res.json()
+  } else {
+    return new Error("Invalid Request")
+  }
 }
+

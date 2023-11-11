@@ -24,3 +24,37 @@ export async function showCart() {
         return err
     }
 }
+
+export async function plusPokeCart(pokemonName) {
+    try {
+        console.log("this is the service: ",pokemonName)
+        const data = await cartApi.addPokeToCart(pokemonName) 
+        return data
+    }
+    catch(err) {
+        return err
+    }
+}
+
+export async function minusPokeCart(pokemonName) {
+    try {
+        console.log("this is the service: ",pokemonName)
+        const data = await cartApi.remPokeFromCart(pokemonName) 
+        return data
+    }
+    catch(err) {
+        return err
+    }
+}
+
+
+export async function addPokeShow(pokemonName){
+    try{
+        const data = await cartApi.addPokeId(pokemonName) 
+        return data
+    }
+    catch(err) {
+        console.log("service file error: ", err)
+        return err
+    }
+}

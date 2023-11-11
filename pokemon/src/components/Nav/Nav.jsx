@@ -8,36 +8,16 @@ import { useState } from 'react'
 import DropDown from '../DropDown/DropDown'
 import { FaBars } from 'react-icons/fa'
 import { BsCart } from 'react-icons/bs'
+import { useCart } from '../../data/CartContext'
 
-import { showCart } from '../../utilities/service/cart-service'
 
 
 const Nav = () => {
-    const [ openDropdown, setOpenDropdown] = useState(false)
-    const [ cartData, setCartData] = useState(null)
-    const [ loading, setLoading ] = useState(true)
+    const [ openDropdown, setOpenDropdown ] = useState(false)
+    const { cartData, loading } = useCart()
     const token = localStorage.getItem("token")
 
-    useEffect(() => {
-        async function handleRequest() {
-          try {
-            const cartResponse = await showCart()
-            console.log("this is cartResponse: ", cartResponse)
-            if (cartResponse) {
-              setCartData(cartResponse)
-              console.log("this is cartData: ", cartData)
-              setLoading(false)
-            }
-          } catch (error) {
-            console.error(error)
-          }
-        }
-
-        if(loading === true) {
-          handleRequest()
-        }
-      }, [])
-
+   
     return (
         <>
         <div className="flex justify-between bg-poke-lightblue w-full">
@@ -59,14 +39,14 @@ const Nav = () => {
             </div>
             <div className="flex gap-10">
                 { token && !loading && (
-                    <div className="my-auto">
-                        <Link to="/indexCart">
-                            <BsCart className="text-[36px] inline"/> 
-                            <span className="ml-2">Cart</span>
-                        </Link>
-                        {cartData && (<span className="ml-1">({cartData.totalItems})</span>)}
-                    </div>
-                )}
+                     <div className="my-auto">
+                     <Link to="/indexCart">
+                       <BsCart className="text-[36px] inline" />
+                       <span className="ml-2">Cart</span>
+                     </Link>
+                     {cartData && <span className="ml-1">({cartData.totalItems})</span>}
+                   </div>
+                 )}
                 { token? (
                     <div className="text-lg rounded-lg my-auto px-2 pt-1 mr-6 hover:bg-poke-grayblue" onClick={() => setOpenDropdown((prev) => !prev)}>
                         <button>

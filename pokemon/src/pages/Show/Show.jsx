@@ -4,13 +4,14 @@ import { Link } from "react-router-dom"
 import { show } from '../../utilities/service/pokemon-service'
 import './Show.css'
 import Spinner from '../../components/Spinner/Spinner'
-
+import { useCart } from '../../data/CartContext'
 
 
 const Show = () => {
     const [pokeData, setPokeData] = useState([])
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
+    const { handleAddToCart } = useCart()
 
       useEffect(() => {
         async function handleRequest() {
@@ -33,8 +34,7 @@ const Show = () => {
         }
       }, [])
 
-
-
+      
   return (
     <div className="">
     {!loading ? (
@@ -53,6 +53,7 @@ const Show = () => {
               <p>{pokeType.charAt(0).toUpperCase() + pokeType.slice(1)}</p>
               </li>
           ))}
+          <button onClick={() => handleAddToCart(pokeData.pokemonName)}>Add {pokeData.pokemonName} to Cart</button>
           </ul>
         </div>
           <div>

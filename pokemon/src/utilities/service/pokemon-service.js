@@ -25,10 +25,10 @@ export async function getRanPoke() {
 }
 
 
-export async function catchPoke() {
+export async function catchPoke(pokemonName, ballType) {
 
     try {
-        const data = await pokeApi.catchPokemon()
+        const data = await pokeApi.catchPokemon(pokemonName, ballType)
         return data
     }
     catch(err) {
@@ -57,3 +57,5 @@ export async function searchPoke(query) {
         return err
     }
 }
+
+

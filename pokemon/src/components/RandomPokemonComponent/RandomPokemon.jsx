@@ -49,9 +49,9 @@ const RandomPokemon = () => {
                   </div>
                 </div>
                 </div>
-              <div className="w-max m-auto p-1 rounded my-2 text-xl">
+              {/* <div className="w-max m-auto p-1 rounded my-2 text-xl">
               ${pokemon.price}
-              </div>
+              </div> */}
               </Link>
             </li>
           ))}
