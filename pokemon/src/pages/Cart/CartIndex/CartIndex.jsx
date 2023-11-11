@@ -15,14 +15,23 @@ const CartIndex = () => {
         <div className="mt-6">
           {cartData.pokeBallItems.length || cartData.pokemonItems.length ? (
             <div>
-              <div>
-                <div>
-                  <h1>Your Cart</h1>
-                </div>
-                <p>Sub Total: ${cartData.subTotal}</p>
-                <p>Sales Tax: ${cartData.salesTax}</p>
-                <p>Total Price: ${cartData.totalPrice}</p>
-              </div>
+              <table className="mx-auto table-auto border-[1px] text-lg">
+                <tr>
+                  <th colSpan="2" className="py-2">Your Cart</th>
+                </tr>
+                <tr>
+                  <td className="border-[1px] py-2 px-4">Sub Total</td>
+                  <td className="border-[1px]  py-2 px-4">${cartData.subTotal}</td>
+                </tr>
+                <tr>
+                  <td className="border-[1px] py-2 px-4">Sales Tax</td>
+                  <td className="border-[1px] py-2 px-4">${cartData.salesTax}</td>
+                </tr>
+                <tr>
+                  <td className="border-[1px] py-2 px-4">Total Price</td>
+                  <td className="border-[1px] py-2 px-4">${cartData.totalPrice}</td>
+                </tr>
+              </table>
               {cartData.pokeBallItems.map((p, index) => (
                 <div key={index}>
                   {/* this will be for our pokeball items */}

@@ -60,32 +60,33 @@ const Show = () => {
             <p className="border-[2px] my-10 mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
             <div className="lg:flex">
               <table className="mr-10">
-                <tr className="border-[2px]">
-                  <td colspan='2' className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Stats</td>
-                </tr>
-                {pokeData.stats && pokeData.stats.map((pokeStat, index) => (
-                <tr key={index}>
-                <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statName.charAt(0).toUpperCase() + pokeStat.statName.slice(1)}</td>
-                <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statData}</td>
-                </tr>
-              ))} 
-              </table> 
+                <tbody>
+                  <tr className="border-[2px]">
+                    <td colSpan='2' className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Stats</td>
+                  </tr>
+                  {pokeData.stats && pokeData.stats.map((pokeStat, index) => (
+                  <tr key={index}>
+                    <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statName.charAt(0).toUpperCase() + pokeStat.statName.slice(1)}</td>
+                    <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statData}</td>
+                  </tr>
+                  ))} 
+                </tbody>
+                </table> 
               <table className="mr-10 h-max">
-                <tr>
-                  <td colspan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Abilities</td>
-                </tr>
-              {pokeData.abilities && pokeData.abilities.map((pokeAbility, index)=>(
-                <tr key={index}>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
-                  <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
-                </tr>
-              ))}
+                <tbody>
+                  <tr>
+                    <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Abilities</td>
+                  </tr>
+                {pokeData.abilities && pokeData.abilities.map((pokeAbility, index)=>(
+                  <tr key={index}>
+                    <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
+                    <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
+                  </tr>
+                ))}
+                </tbody>
               </table>
             </div>
-
-
           </div>
-
       </div>
       </>
     ) : (

@@ -35,19 +35,20 @@ const Search = () => {
 
   return (
     <div className="Search">
-      <h1>Search your Pokemon</h1>
+      <h1 className="m-6 font-[PKMN] text-xl">Search your Pokemon</h1>
       <form onSubmit={(e) => { e.preventDefault()
         handleSearch(searchData) }}>
         <input
           type="text"
-          placeholder="Pokemon must have correct spelling)..."
+          placeholder="Pokemon must have correct spelling..."
           value={searchData}
           onChange={handleInputChange}
+          className="border-[1px] rounded w-[300px] px-2"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="ml-4 bg-poke-blue text-white px-2 py-1 font-bold rounded hover:bg-poke-darkblue">Search</button>
       </form>
       {!loading ? (
-         <div>
+         <div className="w-max mx-auto mt-10">
          <Link to={`/poke/${searchResults.pokeDexId}`}>
 
                 <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
@@ -71,7 +72,8 @@ const Search = () => {
           <div className="flex justify-center">
           <Spinner/>
           </div>
-          <p className="my-4 text-2xl font-[PKMN]">Search a Pokemon...</p>
+          <p className="my-4 text-lg font-[PKMN]">Search for a Pokémon by name or using its National Pokédex number.</p>
+          <p className="my-4 text-lg font-[PKMN]">Need a hint? Try <span className="text-blue-400">Pikachu</span> or <span className="text-blue-400">25</span></p>
           </div>
       )}
     </div>
@@ -79,3 +81,44 @@ const Search = () => {
 }
 
 export default Search
+
+{/* <div className="Search">
+      <h1 className="m-6 font-[PKMN] text-xl">Search your Pokemon</h1>
+      <form onSubmit={(e) => { e.preventDefault()
+        handleSearch(searchData) }}>
+        <input
+          type="text"
+          placeholder="Pokemon must have correct spelling..."
+          value={searchData}
+          onChange={handleInputChange}
+          className="border-[1px] rounded w-[300px] px-2"
+        />
+        <button type="submit" className="ml-4 bg-poke-blue text-white px-2 py-1 font-bold rounded hover:bg-poke-darkblue">Search</button>
+      </form>
+      {!loading ? (
+      
+        <div className="w-max mx-auto mt-10">
+          <Link to={`/poke/${searchResults.pokeDexId}`}>
+            <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
+              <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
+                src={searchResults.home}
+                alt={searchResults.pokemonName}
+              />
+              <div className="bg-poke-lightyellow flex justify-around">
+                <div>
+                  <h3 className="pt-2">{searchResults.pokemonName.charAt(0).toUpperCase() + searchResults.pokemonName.slice(1)}</h3>
+                  <h4 className="pb-2">#{searchResults.pokeDexId}</h4>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        ) : (
+          <div className="w-max mx-auto mt-[100px]">
+          <div className="flex justify-center">
+          <Spinner/>
+          </div>
+          <p className="my-4 text-2xl font-[PKMN]">Gotta catch 'em all!</p>
+          </div>
+      )} 
+    </div> */}
