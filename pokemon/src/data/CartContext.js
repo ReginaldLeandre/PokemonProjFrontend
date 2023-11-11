@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const refreshCart = async () => {
     try {
       const cartResponse = await showCart()
+      console.log("This is cartRes: ", cartResponse)
       if (cartResponse) {
         setCartData(cartResponse)
         setLoading(false)

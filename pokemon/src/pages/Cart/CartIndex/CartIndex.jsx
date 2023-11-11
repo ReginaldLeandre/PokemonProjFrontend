@@ -37,12 +37,13 @@ const CartIndex = () => {
                   </div>
                   <div className="w-full my-auto">
                     <p className="mb-5">{p.pokemon.pokemonName[0].toUpperCase() + p.pokemon.pokemonName.slice(1)}</p>
+                    <p className="mb-5">Price: ${p.pokemon.price}</p>
                     <p className="">
                       Quantity: <span className="border-[1px] border-[gray] bg-white p-2">{p.quantity}</span>
                     </p>
                   </div>
                   <div className="flex align-center items-center">
-                    <p className="m-4">${p.pokemon.price}</p>
+                    <p className="m-4">${p.calcPrice}</p>
                     <button onClick={() => handleDecrease(p.pokemon.pokemonName)}>Decrease</button>
                     <button onClick={() => handleIncrease(p.pokemon.pokemonName)}>Increase</button>
                   </div>
