@@ -95,7 +95,8 @@ const UserPokemonShow = () => {
                                 Trainer
                             </td>
                             <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
-                                {userPokData.user.username}
+                                <Link to={"/user/profile"} className="text-blue-800 hover:text-blue-400">{userPokData.user.username}</Link>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -130,7 +131,7 @@ const UserPokemonShow = () => {
                                 Trainer
                             </td>
                             <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
-                                {userPokData.user.username}
+                                <Link to={"/user/profile"} className="text-blue-800 hover:text-blue-400">{userPokData.user.username}</Link>
                             </td>
                         </tr>
                         <tr>
