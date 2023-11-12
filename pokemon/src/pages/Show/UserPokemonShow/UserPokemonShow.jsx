@@ -37,14 +37,14 @@ const UserPokemonShow = () => {
       <>
       <div className="lg:flex w-max mx-auto">
         <div className="flex flex-col w-[300px] bg-poke-yellow border-[8px] border-poke-yellow rounded m-10 h-max">
-          <h2>#{userPokData.pokeDexId}</h2>
+          <h2>#{userPokData.pokemon.pokeDexId}</h2>
           <img className="w-[300px] border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
-          src={userPokData.home}
-          alt={userPokData.pokemonName}
+          src={userPokData.pokemon.home}
+          alt={userPokData.pokemon.pokemonName}
           />
-          <h2 className="bg-poke-lightyellow">{userPokData.pokemonName.charAt(0).toUpperCase()+userPokData.pokemonName.slice(1)}</h2>
+          <h2 className="bg-poke-lightyellow">{userPokData.pokemon.pokemonName.charAt(0).toUpperCase()+userPokData.pokemon.pokemonName.slice(1)}</h2>
           <ul className="bg-poke-lightyellow flex justify-center">
-          {userPokData.type && userPokData.type.map((type, index) => (
+          {userPokData.pokemon.type && userPokData.pokemon.type.map((type, index) => (
               <li className={`${type} px-3 m-2 rounded shadow-2xl`} key={index}>
               <p>{type.charAt(0).toUpperCase() + type.slice(1)}</p>
               </li>
@@ -54,14 +54,14 @@ const UserPokemonShow = () => {
           </div>
         </div>
           <div>
-            <p className="border-[2px] my-10 mr-10 p-4 border-poke-blue bg-poke-lightyellow">{userPokData.description}</p>
+            <p className="border-[2px] my-10 mr-10 p-4 border-poke-blue bg-poke-lightyellow">{userPokData.pokemon.description}</p>
             <div className="lg:flex">
               <table className="mr-10">
                 <tbody>
                   <tr className="border-[2px]">
                     <td colSpan='2' className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Stats</td>
                   </tr>
-                  {userPokData.stats && userPokData.stats.map((pokeStat, index) => (
+                  {userPokData.pokemon.stats && userPokData.pokemon.stats.map((pokeStat, index) => (
                   <tr key={index}>
                     <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statName.charAt(0).toUpperCase() + pokeStat.statName.slice(1)}</td>
                     <td className="border-[2px] border-poke-blue px-4 py-1 bg-poke-lightyellow">{pokeStat.statData}</td>
@@ -69,19 +69,81 @@ const UserPokemonShow = () => {
                   ))} 
                 </tbody>
                 </table> 
-              <table className="mr-10 h-max">
+              <table className="mr-10 h-max w-72">
                 <tbody>
                   <tr>
                     <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Abilities</td>
                   </tr>
-                {userPokData.abilities && userPokData.abilities.map((pokeAbility, index)=>(
+                {userPokData.pokemon.abilities && userPokData.pokemon.abilities.map((pokeAbility, index)=>(
                   <tr key={index}>
-                    <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.name.charAt(0).toUpperCase() + pokeAbility.name.slice(1)}</td>
-                    <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">{pokeAbility.description}</td>
+                    <td className="border-[2px] border-poke-blue px-2 py-1  bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
+                    <td className="border-[2px] border-poke-blue px-2 py-1  bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
                   </tr>
                 ))}
                 </tbody>
               </table>
+              {userPokData.pokemon.caught ? (
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">
+                            Trainer Details
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                Trainer
+                            </td>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                {userPokData.user.username}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                Date Caught
+                            </td>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                {userPokData.pokemon.caughtOrPurchased}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                Poké Ball used
+                            </td>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                {userPokData.pokemon.pokeBall}
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+              ) : (
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">
+                            Trainer Details
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                Trainer
+                            </td>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                {userPokData.user.username}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                Date Purchased
+                            </td>
+                            <td className="border-[2px] border-poke-blue px-4 py-2 bg-poke-lightyellow">
+                                {userPokData.pokemon.caughtOrPurchased}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              )}
             </div>
           </div>
       </div>
