@@ -5,6 +5,7 @@ import { show } from '../../utilities/service/pokemon-service'
 import './Show.css'
 import Spinner from '../../components/Spinner/Spinner'
 import { useCart } from '../../data/CartContext'
+import {BsCartPlus} from 'react-icons/bs'
 
 
 const Show = () => {
@@ -53,8 +54,13 @@ const Show = () => {
               <p>{pokeType.charAt(0).toUpperCase() + pokeType.slice(1)}</p>
               </li>
           ))}
-          <button onClick={() => handleAddToCart(pokeData.pokeDexId)}>Add {pokeData.pokemonName} to Cart</button>
           </ul>
+          <div className="p-3 bg-poke-lightyellow" >
+            <button className="bg-poke-yellow hover:scale-105 py-1 px-2 rounded border-[1px] border-poke-yellow" onClick={() => handleAddToCart(pokeData.pokeDexId)}>
+              Add {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} to Cart
+              <BsCartPlus className="inline ml-2 text-[24px] my-auto pb-1"/>
+            </button>
+          </div>
         </div>
           <div>
             <p className="border-[2px] my-10 mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
