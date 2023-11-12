@@ -5,10 +5,12 @@ import { useCart } from '../../../data/CartContext'
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
 
 const CartIndex = () => {
-  const { cartData, loading, refreshCart, handleDecrease, handleIncrease } = useCart()
+  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart } = useCart()
+  const [ openEmptyCart, setOpenEmptyCart ] = useState(false)
 
-
-  
+  const handleOpenEmptyCart = async () => {
+    setOpenEmptyCart((prev) => !prev)
+}
 
   return (
     <div>
@@ -61,6 +63,15 @@ const CartIndex = () => {
                   <div className="flex align-center items-center">
                     <p className="m-4">${p.calcPrice}</p>
                   </div>
+                    <div>
+                      <button onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
+                    {
+                      openEmptyCart && <p> Are you sure you want to empty your cart? 
+                        <button onClick={() => handleEmptyCart()}>Yes</button>
+                        <br></br>
+                        <button onClick={() => handleOpenEmptyCart()}>No</button> </p>
+                    }
+                    </div>
                 </div>
               ))}
             </div>

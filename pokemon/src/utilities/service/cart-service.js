@@ -48,13 +48,25 @@ export async function minusPokeCart(pokemonName) {
 }
 
 
-export async function addPokeShow(pokemonName){
+export async function addPokeShow(pokeDexId){
     try{
-        const data = await cartApi.addPokeId(pokemonName) 
+        const data = await cartApi.addPokeId(pokeDexId) 
         return data
     }
     catch(err) {
-        console.log("service file error: ", err)
+        console.log("(addPokeShow)service file error: ", err)
+        return err
+    }
+}
+
+
+export async function emptyCart() {
+    try {
+        const data = await cartApi.emptyCart()
+        return data
+    }
+    catch(err){
+        console.log("(emptyCart)service file error: ", err)
         return err
     }
 }

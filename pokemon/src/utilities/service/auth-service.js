@@ -20,3 +20,14 @@ export async function signIn(data) {
     throw err
   }
 }
+
+
+export async function userShow() {
+  try {
+    const data = await AuthAPI.show()
+    return data
+  }catch(err){
+    console.log("This is the user's show page error: ", err)
+    throw err
+  }
+}

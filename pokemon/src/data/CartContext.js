@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { showCart, minusPokeCart, plusPokeCart, addPokeShow } from '../utilities/service/cart-service'
+import { showCart, minusPokeCart, plusPokeCart, addPokeShow, emptyCart } from '../utilities/service/cart-service'
+
 
 const CartContext = createContext()
 
@@ -16,7 +17,7 @@ export const CartProvider = ({ children }) => {
         setLoading(false)
       }
     } catch (error) {
-      console.error(error)
+      console.error("This is the refreshCart error: ", error)
     }
   }
   const handleAddToCart = async (pokemonName) => {
@@ -25,8 +26,19 @@ export const CartProvider = ({ children }) => {
       await addPokeShow(pokemonName) 
       refreshCart()
     } catch (error) {
-      console.error(error)
+      console.error("This is the AddToCart error: ", error)
     }
+  }
+
+  const handleEmptyCart = async () => {
+    try {
+      await emptyCart()
+      refreshCart()
+    }
+    catch(error) {
+      console.error("This is the empty cart error: ", error)
+    }
+
   }
 
 
@@ -42,7 +54,7 @@ export const CartProvider = ({ children }) => {
       await minusPokeCart(pokemonName) 
       refreshCart()
     } catch (error) {
-      console.error(error)
+      console.error("This is the Decrease cart error: ", error)
     }
   }
   
@@ -52,7 +64,7 @@ export const CartProvider = ({ children }) => {
       await plusPokeCart(pokemonName)
       refreshCart()
     } catch (error) {
-      console.error(error)
+      console.error("This is the Increase cart error: ", error)
     }
   }
 
@@ -78,7 +90,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider value={{ cartData, 
     setCartData, loading, setLoading,
     handleDecrease,
-    handleIncrease, refreshCart, handleAddToCart }}>
+    handleIncrease, refreshCart, handleAddToCart, handleEmptyCart }}>
       {children}
     </CartContext.Provider>
   )

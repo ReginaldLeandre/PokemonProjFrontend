@@ -34,8 +34,8 @@ export async function getRandomPokemon() {
 
 
 // router.post('/pokmon/catch', pokemonCtrl.catch)
-export async function catchPokemon(pokemonName, ballType) {
-    const res = await fetch(`${pokeURL}/pokemon/catch?pokemonName=${pokemonName}&ballType=${ballType}`, {
+export async function catchPokemon(pokeDexId, ballType) {
+    const res = await fetch(`${pokeURL}/pokemon/catch?pokeDexId=${pokeDexId}&ballType=${ballType}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${getUserToken()}`

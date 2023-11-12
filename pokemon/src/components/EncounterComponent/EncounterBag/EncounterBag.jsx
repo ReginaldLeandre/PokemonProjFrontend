@@ -3,11 +3,11 @@ import { catchPoke } from '../../../utilities/service/pokemon-service'
 
 const EncounterBag = (props) => {
 
-    const { pokemonName } = props
+    const { pokeDexId } = props
 
     const handleCatch = async (ballType) => {
         try {
-            const catchResponse = await catchPoke(pokemonName, ballType)
+            const catchResponse = await catchPoke(pokeDexId, ballType)
             console.log("This is the catch Response: ", catchResponse)
         }
         catch(err) {

@@ -53,7 +53,7 @@ const Show = () => {
               <p>{pokeType.charAt(0).toUpperCase() + pokeType.slice(1)}</p>
               </li>
           ))}
-          <button onClick={() => handleAddToCart(pokeData.pokemonName)}>Add {pokeData.pokemonName} to Cart</button>
+          <button onClick={() => handleAddToCart(pokeData.pokeDexId)}>Add {pokeData.pokemonName} to Cart</button>
           </ul>
         </div>
           <div>
