@@ -56,7 +56,7 @@ const Show = () => {
           ))}
           </ul>
           <div className="p-3 bg-poke-lightyellow" >
-            <button className="bg-poke-yellow hover:scale-105 py-1 px-2 rounded border-[1px] border-poke-yellow" onClick={() => handleAddToCart(pokeData.pokeDexId)}>
+            <button className="bg-poke-lightblue hover:scale-105 py-1 px-2 rounded border-[1px] border-black" onClick={() => handleAddToCart(pokeData.pokeDexId)}>
               Add {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} to Cart
               <BsCartPlus className="inline ml-2 text-[24px] my-auto pb-1"/>
             </button>
