@@ -64,3 +64,24 @@ export async function show() {
   }
 
 }
+
+
+// router.get('/user/pokemon/:id', requireToken, authCtrl.UpokeShow)
+export async function userPokeshow(id) {
+
+  const url = `${authURL}/user/pokemon/${id}`
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  }
+
+  const response = await fetch(url, options)
+  if(response.ok){
+    return response.json()
+  } else {
+    throw new Error(response.statusText)
+  }
+
+}

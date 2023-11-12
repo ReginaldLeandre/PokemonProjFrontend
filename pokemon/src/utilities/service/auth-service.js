@@ -31,3 +31,15 @@ export async function userShow() {
     throw err
   }
 }
+
+
+export async function userPokeshow(id) {
+  try{
+    const data = await AuthAPI.userPokeshow(id)
+    return data
+  }
+  catch(err) {
+    console.log("This is the user's pokemon show page error: ", err)
+    throw err
+  }
+}
