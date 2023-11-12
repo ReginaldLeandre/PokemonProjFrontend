@@ -69,15 +69,15 @@ const UserPokemonShow = () => {
                   ))} 
                 </tbody>
                 </table> 
-              <table className="mr-10 h-max w-72">
+              <table className="mr-10 h-max">
                 <tbody>
                   <tr>
                     <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Abilities</td>
                   </tr>
                 {userPokData.pokemon.abilities && userPokData.pokemon.abilities.map((pokeAbility, index)=>(
                   <tr key={index}>
-                    <td className="border-[2px] border-poke-blue px-2 py-1  bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
-                    <td className="border-[2px] border-poke-blue px-2 py-1  bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
+                    <td className="border-[2px] border-poke-blue px-4 py-2  bg-poke-lightyellow">{pokeAbility.abilityName.charAt(0).toUpperCase() + pokeAbility.abilityName.slice(1)}</td>
+                    <td className="border-[2px] border-poke-blue px-4 py-2  bg-poke-lightyellow">{pokeAbility.abilityDescription}</td>
                   </tr>
                 ))}
                 </tbody>
