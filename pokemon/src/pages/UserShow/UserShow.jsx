@@ -1,6 +1,11 @@
 import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { userShow } from '../../utilities/service/auth-service'
+import Spinner from '../../components/Spinner/Spinner'
+import pokeball from '../../assets/pokeballs/pokeball.webp'
+import greatball from '../../assets/pokeballs/greatball.webp'
+import ultraball from '../../assets/pokeballs/ultraball.webp'
+import masterball from '../../assets/pokeballs/masterball.webp'
 
 const UserShow = () => {
   const  [ userData, setUserData ] = useState(null)
@@ -30,7 +35,86 @@ const UserShow = () => {
 
 
   return (
-    <div>UserShow</div>
+    <div>
+    {!loading ? (
+    <div>
+      <p className="text-3xl my-4">{userData.user.username}</p>
+      
+      <div className="sm:flex w-max mx-auto">
+        {/* THIS DIV CONTAINS THE TWO GRIDS FOR USER POKEMON AND USER POKEBALLS */}
+        <div>
+          <p className="text-2xl">{userData.user.username}'s Pokémon</p>
+          {userData.allUserPokemon ? (
+          <div>
+          {/* THIS IS THE POKEMON GRID */}
+            <div className="grid grid-cols-5 border-[1px] border-black">
+              {userData.allUserPokemon.map((pokemon) => (
+                <Link to={`/user/pokemon/${pokemon.pokeDexId}`}>
+                <div className="border-[1px] m-2">
+                  <p>{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</p>
+                  <p>#{pokemon.pokeDexId}</p>
+                  <img className="mx-auto" src={pokemon.front} alt={pokemon.pokemonName}/>
+                </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+          ) : (
+            <div className="font-[PKMN] border-[1px] border-black px-4 py-2 m-6">
+              <p>You don't own any Pokémon yet. </p>
+              <p>
+                Visit 
+                <Link to="/encounter" className="text-blue-400 hover:text-poke-blue"> Encounter</Link>
+                to catch a Pokémon. 
+              </p>
+              <p>
+                Visit 
+                <Link to="/search" className="text-blue-400 hover:text-poke-blue"> Find Pokémon</Link>
+                to search a Pokémon.
+              </p>
+            </div>
+          )}
+        </div>
+        
+        <div>
+          <p className="text-2xl">{userData.user.username}'s Poké Balls</p>
+          {userData.allUserPokeball ? (
+          <div>
+            {/* THIS IS THE POKEBALLS GRID */}
+            {userData.allUserPokeBall.map((pokeball) => (
+              <div className="border-[1px] w-max mx-auto">
+                {/* <p>{pokeball.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</p>
+                <p>#{pokemon.pokeDexId}</p>
+                <img className="mx-auto" src={pokemon.front} alt={pokemon.pokemonName}/> */}
+              </div>
+            ))}
+          
+          </div>
+          ) : (
+            <div className="font-[PKMN] border-[1px] border-black px-4 py-2 m-6">
+              <p>You don't own any Poké Balls yet.</p> 
+              <p>
+                Visit
+                <Link to="/pokeballs" className="text-blue-400 hover:text-poke-blue"> Poké Balls </Link>
+                to buy them. 
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+
+    ) : (
+      <div className="w-max mx-auto mt-[100px]">
+        <div className="flex justify-center">
+        <Spinner/>
+        </div>
+        <p className="my-4 text-2xl font-[PKMN]">Loading...</p>
+      </div>
+    )
+    }
+    </div>
+    
   )
 }
 

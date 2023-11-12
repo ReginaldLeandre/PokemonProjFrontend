@@ -44,7 +44,7 @@ const EncounterBag = (props) => {
                     <p>Master Ball</p>
                     <p>x5</p>
                 </div>
-                <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white">USE</button>
+                <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("MasterBall")}>USE</button>
             </div>
             
         </div>

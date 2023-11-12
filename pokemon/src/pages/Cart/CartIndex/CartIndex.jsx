@@ -35,6 +35,18 @@ const CartIndex = () => {
                   <td className="border-[1px] py-2 px-4">${cartData.totalPrice}</td>
                 </tr>
               </table>
+              <div>
+                      <button className="bg-red-500 text-white rounded px-2 py-1 font-bold hover:bg-red-400 my-6" onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
+                    {
+                      openEmptyCart && 
+                      <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mb-4 bg-poke-lightblue"> 
+                        <p>Are you sure you want to empty your cart? </p>
+                        <button className="bg-red-500 my-2 px-6 py-1 rounded text-white hover:bg-red-400 font-bold" onClick={() => handleEmptyCart()}>Yes</button>
+                        <br></br>
+                        <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold" onClick={() => handleOpenEmptyCart()}>No</button> 
+                      </div>
+                    }
+              </div>
               {cartData.pokeBallItems.map((p, index) => (
                 <div key={index}>
                   {/* this will be for our pokeball items */}
@@ -55,25 +67,18 @@ const CartIndex = () => {
                   <div className="flex my-auto">
                       <p className="my-auto mr-2">Qty: </p>
                     <div className="my-auto">
-                      <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] ml-2 mb-1"/>
+                      <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
                       <span className="border-[1px] border-[gray] bg-white p-1">{p.quantity}</span>
-                      <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] ml-2 mt-1"/>
+                      <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
                     </div>
                   </div>
                   <div className="flex align-center items-center">
                     <p className="m-4">${p.calcPrice}</p>
                   </div>
-                    <div>
-                      <button onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
-                    {
-                      openEmptyCart && <p> Are you sure you want to empty your cart? 
-                        <button onClick={() => handleEmptyCart()}>Yes</button>
-                        <br></br>
-                        <button onClick={() => handleOpenEmptyCart()}>No</button> </p>
-                    }
-                    </div>
+                    
                 </div>
               ))}
+             
             </div>
           ) : (
             <div>No items in the cart yet</div>

@@ -11,7 +11,7 @@ import Search from '../../pages/Search/Search'
 import Error404 from '../../pages/Error/Index'
 import CreateCart from '../../pages/Cart/CreateCart/CreateCart'
 import CartIndex from '../../pages/Cart/CartIndex/CartIndex'
-
+import UserPokemonShow from "../../pages/Show/UserPokemonShow/UserPokemonShow.jsx"
 
 
 
@@ -27,6 +27,7 @@ export default function MainRoutes(props) {
             <Route path='/poke/:id' element={<Show />} />
             <Route path='/pokeballs' element={<PokeBalls />}/>
             <Route path='/user/profile' element={<UserShow />}/>
+            <Route path='/user/pokemon/:id' element={<UserPokemonShow />}/>
             <Route path='/search' element={<Search />}/>
             <Route path='/encounter' element={<Encounter />}/>
             <Route path='/createCart' element={<CreateCart />}/>
