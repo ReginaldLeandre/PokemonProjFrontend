@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pokeball from '../../assets/pokeballs/pokeball.webp'
 import greatball from '../../assets/pokeballs/greatball.webp'
 import ultraball from '../../assets/pokeballs/ultraball.webp'
@@ -8,7 +8,33 @@ import { useCart } from '../../data/CartContext'
 
 const PokeBalls = () => {
     const { handleAddPokeBall } = useCart()
+    const [pokeballMsg, setPokeballMsg] = useState(null)
 
+    const handlePokeballMessage = async (ballType) => {
+        try {
+            const addingBall = await handleAddPokeBall(ballType)
+ 
+            if (addingBall.masterBallError) {
+              console.log("Masterball Error:", addingBall.masterBallError)
+              setPokeballMsg(addingBall.masterBallError)
+              setPokeballMsg(prevMsg => addingBall.masterBallError)
+              setTimeout(() => {
+                setPokeballMsg(null)
+              }, 2000)
+            }
+            if (addingBall.pokeballCartMsg) {
+             console.log("Pokeball Cart Message:", addingBall.pokeballCartMsg)
+             setPokeballMsg(prevMsg => addingBall.pokeballCartMsg)
+             setTimeout(() => {
+                setPokeballMsg(null)
+              }, 2000)
+           }
+         }
+         catch (error) {
+             console.error("Error adding PokeBall:", error)
+             setPokeballMsg("Failed to add PokeBall to your Cart")
+         }
+      }
 
     return (
         <div className="sm:flex gap-[50px] w-max mx-auto mt-10">
@@ -20,7 +46,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105" onClick={() => handleAddPokeBall("PokeBall")}>
+                    <button className="hover:scale-105" onClick={() => handlePokeballMessage("PokeBall")}>
                         <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div> 
@@ -34,7 +60,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105" onClick={() => handleAddPokeBall("GreatBall")}>
+                    <button className="hover:scale-105" onClick={() => handlePokeballMessage("GreatBall")}>
                         <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
@@ -48,7 +74,7 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105" onClick={() => handleAddPokeBall("UltraBall")}>
+                    <button className="hover:scale-105" onClick={() => handlePokeballMessage("UltraBall")}>
                         <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
@@ -62,11 +88,14 @@ const PokeBalls = () => {
                 </div>
                 <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                     <p className="my-auto">Add to Cart</p>
-                    <button className="hover:scale-105" onClick={() => handleAddPokeBall("MasterBall")}>
+                    <button className="hover:scale-105" onClick={() => handlePokeballMessage("MasterBall")}>
                         <BsCartPlus className="text-[32px]"/>
                     </button>
                 </div>
                 <p className="border-t-[2px] px-3 pt-8">A type of Poké Ball that is able to catch any type of Pokémon without fail.</p>
+            </div>
+            <div>
+                {pokeballMsg && <p>{pokeballMsg}</p>}
             </div>
         </div>
     )

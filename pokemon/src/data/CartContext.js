@@ -71,11 +71,18 @@ export const CartProvider = ({ children }) => {
   const handleAddPokeBall = async (ballType) => {
     try {
       console.log("this is the pokeball being added: ", ballType)
-      await addPokeBallCart(ballType)
+      const response = await addPokeBallCart(ballType)
+      
+      if (response.pokeballCartMsg) {
+        console.log("Pokeball Cart Message:", response.pokeballCartMsg)
+      } else if (response.masterBallError) {
+        console.log("Masterball Error:", response.masterBallError)
+      }
+  
       refreshCart()
-    }
-    catch (error) {
-      console.error("this is the error from the cart context for pokeball: ", error)
+      return response
+    } catch (error) {
+      console.error("Error in handleAddPokeBall:", error)
     }
   }
 
