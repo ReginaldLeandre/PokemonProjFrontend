@@ -41,7 +41,7 @@ const Show = () => {
     {!loading ? (
       <>
       <div className="lg:flex w-max mx-auto">
-        <div className="flex flex-col w-[300px] bg-poke-yellow border-[8px] border-poke-yellow rounded m-10 h-max">
+        <div className="flex flex-col w-[300px] mx-auto bg-poke-yellow border-[8px] border-poke-yellow rounded mt-6 sm:m-10 h-max">
           <h2>#{pokeData.pokeDexId}</h2>
           <img className="w-[300px] border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
           src={pokeData.home}
@@ -63,9 +63,9 @@ const Show = () => {
           </div>
         </div>
           <div>
-            <p className="border-[2px] my-10 mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
-            <div className="lg:flex">
-              <table className="mr-10">
+            <p className="w-[300px] sm:w-[560px] border-[2px] my-10 mx-auto sm:mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
+            <div className="md:flex">
+              <table className="lg:mr-10 mx-auto my-8 sm:my-0">
                 <tbody>
                   <tr className="border-[2px]">
                     <td colSpan='2' className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Stats</td>
@@ -78,7 +78,7 @@ const Show = () => {
                   ))} 
                 </tbody>
                 </table> 
-              <table className="mr-10 h-max">
+              <table className="lg:mr-10 h-max w-[300px] mx-auto mb-6">
                 <tbody>
                   <tr>
                     <td colSpan="2" className="border-[2px] border-poke-blue bg-poke-blue text-white font-bold">Abilities</td>
