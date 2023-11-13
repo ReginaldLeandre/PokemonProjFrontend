@@ -65,15 +65,15 @@ function Auth() {
     ) : (
       <LoginForm signIn={handleLoginUser} />
     )}
-    <div className="mt-10 mx-auto w-max flex">
+    <div className="mt-10 mx-auto sm:w-max flex">
         {!showRegisterForm ? 
-          (<div className="flex">
-              <p className="font-[PKMN] mr-2">Don't have an account?</p>
-              <button onClick={() => setShowRegisterForm(true)} className="font-[PKMN] underline text-blue-400 hover:text-poke-blue">Sign Up</button>
+          (<div className="sm:flex mx-auto">
+              <p className="font-[PKMN] sm:mr-2">Don't have an account?</p>
+              <button onClick={() => setShowRegisterForm(true)} className="mt-2 sm:mt-0 font-[PKMN] underline text-blue-400 hover:text-poke-blue">Sign Up</button>
             </div>)
-        : (<div className="flex">
-              <p className="font-[PKMN] mr-2">Have an account?</p>
-              <button onClick={() => setShowRegisterForm(false)} className="font-[PKMN] underline text-blue-400 hover:text-poke-blue">Login</button>
+        : (<div className="sm:flex mx-auto">
+              <p className="font-[PKMN] sm:mr-2">Have an account?</p>
+              <button onClick={() => setShowRegisterForm(false)} className="mt-2 sm:mt-0 font-[PKMN] underline text-blue-400 hover:text-poke-blue">Login</button>
           </div>)
         }
       </div>

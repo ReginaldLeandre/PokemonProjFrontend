@@ -26,28 +26,28 @@ const LoginForm = ({ signIn }) => {
   }
 
   return (
-    <div className="text-lg w-max mx-auto p-10 pt-8 bg-poke-lightblue">
+    <div className="text-lg max-w-[360px] sm:w-max mx-auto py-8 sm:p-8 bg-poke-lightblue">
       <h1 className="text-2xl mb-4">Log In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col w-max mx-auto">
         <div className="my-2">
-          <label htmlFor="username">Username: </label>
+          <label htmlFor="username" className="block sm:inline">Username: </label>
           <input
             id="username"
             name="username"
             value={input.username}
             onChange={handleChange}
-            className="border-[1px] border-gray-800 p-1 rounded"
+            className="w-full sm:w-auto border-[1px] border-gray-800 p-1 rounded"
           />
         </div>
         <div className="mt-2 mb-4">
-          <label htmlFor="password" className="mr-2">Password: </label>
+          <label htmlFor="password" className="mr-2 block sm:inline">Password: </label>
           <input
             type="password"
             id="password"
             name="password"
             value={input.password}
             onChange={handleChange}
-            className="border-[1px] border-gray-800 p-1 rounded"
+            className="w-full sm:w-auto border-[1px] border-gray-800 p-1 rounded"
           />
         </div>
         <input className="hover:cursor-pointer hover:bg-poke-darkblue bg-poke-blue py-1 px-8 text-white font-bold rounded-md mt-4 w-[80%] mx-auto" type="submit" value="Log In"/>
