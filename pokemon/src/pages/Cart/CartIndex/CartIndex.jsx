@@ -26,27 +26,91 @@ const CartIndex = () => {
               {cartData.pokeBallItems.map((p, index) => (
                 <div key={index}>
                   {(p.pokeBall.ballType === 'PokeBall') && (
-                    <div>
-                    <p>Poké Ball</p>
-                    <img src={PokeBall} className="w-[79.39px]"/>
+                    <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                      <img className="max-w-[60px] mx-auto" src={PokeBall} alt="Poke Ball" />
                     </div>
+                    <div className="w-full my-auto">
+                      <p className="my-5">Poké Ball</p>
+                      <p className="mb-5">Price: ${p.pokeBall.price}</p>
+                    </div>
+                    <div className="flex my-auto min-w-[90px]">
+                      <p className="my-auto mr-2">Qty: </p>
+                      <div className="my-auto flex flex-col items-center">
+                        <BsCaretUpFill onClick={() => handleIncrease(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
+                        <BsCaretDownFill onClick={() => handleDecrease(p.pokBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                      </div>
+                    </div>
+                    <div className="flex align-center items-center min-w-[150px]">
+                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                    </div>
+                  </div>
                   )}
                   {(p.pokeBall.ballType === 'GreatBall') && (
-                    <div>
-                    <p>Great Ball</p>
-                    <img src={GreatBall} className="w-[79.39px]"/>
+                    <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                      <img className="max-w-[60px] mx-auto" src={GreatBall} alt="Master Ball" />
                     </div>
+                    <div className="w-full my-auto">
+                      <p className="my-5">Great Ball</p>
+                      <p className="mb-5">Price: ${p.pokeBall.price}</p>
+                    </div>
+                    <div className="flex my-auto min-w-[90px]">
+                      <p className="my-auto mr-2">Qty: </p>
+                      <div className="my-auto flex flex-col items-center">
+                        <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
+                        <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                      </div>
+                    </div>
+                    <div className="flex align-center items-center min-w-[150px]">
+                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                    </div>
+                  </div>
                   )}
                   {(p.pokeBall.ballType === 'UltraBall') && (
-                    <div>
-                    <p>Ultra Ball</p>
-                    <img src={UltraBall} className="w-[79.39px]"/>
+                    <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                      <img className="max-w-[60px] mx-auto" src={UltraBall} alt="Ultra Ball" />
                     </div>
+                    <div className="w-full my-auto">
+                      <p className="my-5">Ultra Ball</p>
+                      <p className="mb-5">Price: ${p.pokeBall.price}</p>
+                    </div>
+                    <div className="flex my-auto min-w-[90px]">
+                      <p className="my-auto mr-2">Qty: </p>
+                      <div className="my-auto flex flex-col items-center">
+                        <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
+                        <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                      </div>
+                    </div>
+                    <div className="flex align-center items-center min-w-[150px]">
+                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                    </div>
+                  </div>
                   )}
                   {(p.pokeBall.ballType === 'MasterBall') && (
-                    <div>
-                    <p>Master Ball</p>
-                    <img src={MasterBall} className="w-[79.39px]"/>
+                    <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
+                      <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                        <img className="max-w-[60px] mx-auto" src={MasterBall} alt="Master Ball" />
+                      </div>
+                      <div className="w-full my-auto">
+                        <p className="my-5">Master Ball</p>
+                        <p className="mb-5">Price: ${p.pokeBall.price}</p>
+                      </div>
+                      <div className="flex my-auto min-w-[90px]">
+                        <p className="my-auto mr-2">Qty: </p>
+                        <div className="my-auto flex flex-col items-center">
+                          <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                          <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
+                          <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                        </div>
+                      </div>
+                      <div className="flex align-center items-center min-w-[150px]">
+                        <p className="mx-auto m-4">$placeholder for calulated price</p>
+                      </div>
                     </div>
                   )}
                 </div>
