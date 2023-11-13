@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import Spinner from '../../../components/Spinner/Spinner'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../../data/CartContext'
-import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
+import { BsCaretUpFill, BsCaretDownFill, BsXCircleFill } from 'react-icons/bs'
 import PokeBall from '../../../assets/pokeballs/pokeball.webp'
 import GreatBall from '../../../assets/pokeballs/greatball.webp'
 import UltraBall from '../../../assets/pokeballs/ultraball.webp'
@@ -59,9 +59,9 @@ const CartIndex = () => {
                     <div className="flex my-auto min-w-[90px]">
                       <p className="my-auto mr-2">Qty: </p>
                       <div className="my-auto flex flex-col items-center">
-                        <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <BsCaretUpFill onClick={() => handleIncreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
                         <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
-                        <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                        <BsCaretDownFill onClick={() => handleDecreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
                       </div>
                     </div>
                     <div className="flex align-center items-center min-w-[150px]">
@@ -81,9 +81,9 @@ const CartIndex = () => {
                     <div className="flex my-auto min-w-[90px]">
                       <p className="my-auto mr-2">Qty: </p>
                       <div className="my-auto flex flex-col items-center">
-                        <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <BsCaretUpFill onClick={() => handleIncreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
                         <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
-                        <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                        <BsCaretDownFill onClick={() => handleDecreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
                       </div>
                     </div>
                     <div className="flex align-center items-center min-w-[150px]">
@@ -97,15 +97,15 @@ const CartIndex = () => {
                         <img className="max-w-[60px] mx-auto" src={MasterBall} alt="Master Ball" />
                       </div>
                       <div className="w-full my-auto">
-                        <p className="my-5">Master Ball</p>
-                        <p className="mb-5">Price: ${p.pokeBall.price}</p>
+                        <p className="mt-5">Master Ball</p>
+                        <p className="text-poke-blue">(Limit 1 Master Ball per person)</p>
+                        <p className="mb-4">Price: ${p.pokeBall.price}</p>
                       </div>
                       <div className="flex my-auto min-w-[90px]">
                         <p className="my-auto mr-2">Qty: </p>
-                        <div className="my-auto flex flex-col items-center">
-                          <BsCaretUpFill onClick={() => handleIncrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
-                          <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
-                          <BsCaretDownFill onClick={() => handleDecrease(p.pokemon.pokemonName)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
+                        <div className="flex flex-col items-center">
+                          <span className="border-[1px] border-[gray] bg-white py-1 px-2 mt-[18px]">{p.quantity}</span>
+                          <BsCaretDownFill onClick={() => handleDecreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
                         </div>
                       </div>
                       <div className="flex align-center items-center min-w-[150px]">
