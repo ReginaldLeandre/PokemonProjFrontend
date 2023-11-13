@@ -43,7 +43,7 @@ const CartIndex = () => {
                       </div>
                     </div>
                     <div className="flex align-center items-center min-w-[150px]">
-                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                      <p className="mx-auto m-4">${p.calcPrice}</p>
                     </div>
                   </div>
                   )}
@@ -65,7 +65,7 @@ const CartIndex = () => {
                       </div>
                     </div>
                     <div className="flex align-center items-center min-w-[150px]">
-                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                      <p className="mx-auto m-4">${p.calcPrice}</p>
                     </div>
                   </div>
                   )}
@@ -87,7 +87,7 @@ const CartIndex = () => {
                       </div>
                     </div>
                     <div className="flex align-center items-center min-w-[150px]">
-                      <p className="mx-auto m-4">$placeholder for calulated price</p>
+                      <p className="mx-auto m-4">${p.calcPrice}</p>
                     </div>
                   </div>
                   )}
@@ -98,7 +98,7 @@ const CartIndex = () => {
                       </div>
                       <div className="w-full my-auto">
                         <p className="mt-5">Master Ball</p>
-                        <p className="text-poke-blue">(Limit 1 Master Ball per person)</p>
+                        <p className="text-poke-blue">(Limit 1 Master Ball per account)</p>
                         <p className="mb-4">Price: ${p.pokeBall.price}</p>
                       </div>
                       <div className="flex my-auto min-w-[90px]">
@@ -109,7 +109,7 @@ const CartIndex = () => {
                         </div>
                       </div>
                       <div className="flex align-center items-center min-w-[150px]">
-                        <p className="mx-auto m-4">$placeholder for calulated price</p>
+                        <p className="mx-auto m-4">${p.calcPrice}</p>
                       </div>
                     </div>
                   )}
