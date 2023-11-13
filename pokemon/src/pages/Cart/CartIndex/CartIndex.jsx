@@ -142,21 +142,23 @@ const CartIndex = () => {
               </div>
               <div className="w-[372.5px] mt-10">
                 <table className="border-[1px] text-lg mx-auto">
-                  <tr>
-                    <th colSpan="2" className="py-2">Your Cart</th>
-                  </tr>
-                  <tr>
-                    <td className="border-[1px] px-4 py-2">Sub Total</td>
-                    <td className="border-[1px] px-4 py-2">${cartData.subTotal}</td>
-                  </tr>
-                  <tr>
-                    <td className="border-[1px] px-4 py-2">Sales Tax</td>
-                    <td className="border-[1px] px-4 py-2">${cartData.salesTax}</td>
-                  </tr>
-                  <tr>
-                    <td className="border-[1px] px-4 py-2">Total Price</td>
-                    <td className="border-[1px] px-4 py-2">${cartData.totalPrice}</td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <th colSpan="2" className="py-2">Your Cart</th>
+                    </tr>
+                    <tr>
+                      <td className="border-[1px] px-4 py-2">Sub Total</td>
+                      <td className="border-[1px] px-4 py-2">${cartData.subTotal.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-[1px] px-4 py-2">Sales Tax</td>
+                      <td className="border-[1px] px-4 py-2">${cartData.salesTax.toFixed(2)}</td>
+                    </tr>
+                    <tr>
+                      <td className="border-[1px] px-4 py-2">Total Price</td>
+                      <td className="border-[1px] px-4 py-2">${cartData.totalPrice.toFixed(2)}</td>
+                    </tr>
+                  </tbody>
                 </table>
                 <div>
                     {/* EMPTY CART */}
