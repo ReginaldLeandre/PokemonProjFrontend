@@ -41,7 +41,7 @@ const Show = () => {
     {!loading ? (
       <>
       <div className="lg:flex w-max mx-auto">
-        <div className="flex flex-col w-[300px] mx-auto bg-poke-yellow border-[8px] border-poke-yellow rounded mt-6 sm:m-10 h-max">
+        <div className="flex flex-col w-[300px] mx-auto lg:m-10 bg-poke-yellow border-[8px] border-poke-yellow rounded mt-6 h-max">
           <h2>#{pokeData.pokeDexId}</h2>
           <img className="w-[300px] border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
           src={pokeData.home}
@@ -63,8 +63,8 @@ const Show = () => {
           </div>
         </div>
           <div>
-            <p className="w-[300px] sm:w-[560px] border-[2px] my-10 mx-auto sm:mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
-            <div className="md:flex">
+            <p className="w-[300px] sm:w-[560px] border-[2px] my-10 mx-auto lg:mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>
+            <div className="sm:flex">
               <table className="lg:mr-10 mx-auto my-8 sm:my-0">
                 <tbody>
                   <tr className="border-[2px]">
