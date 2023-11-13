@@ -53,7 +53,7 @@ const Nav = () => {
             </div>
             <div className="flex gap-10">
                 { token && !loading && (
-                     <div className="my-auto md:mx-0 mr-6">
+                     <div className="my-auto md:mx-0 mr-6 hover:scale-105">
                      <Link to="/indexCart">
                         <div className="my-auto">
                             <BsCart className="text-[36px] inline mt-2" />
