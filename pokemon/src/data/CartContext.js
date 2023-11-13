@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { showCart, minusPokeCart, plusPokeCart, addPokeShow, emptyCart, addPokeBallCart } from '../utilities/service/cart-service'
-import { incPokeBall } from '../utilities/api/cart-api'
+import { incPokeBall, decPokeBall } from '../utilities/api/cart-api'
 
 
 const CartContext = createContext()
@@ -79,6 +79,16 @@ export const CartProvider = ({ children }) => {
     }
   }
 
+  const handleDecreasePokeBall = async (pokeBall) => {
+    try {
+      console.log("this is the handleIncrease: ",pokeBall)
+      await decPokeBall(pokeBall)
+      refreshCart()
+    } catch (error) {
+      console.error("This is the Increase cart error: ", error)
+    }
+  }
+
   const handleAddPokeBall = async (ballType) => {
     try {
       console.log("this is the pokeball being added: ", ballType)
@@ -119,7 +129,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider value={{ cartData, 
     setCartData, loading, setLoading,
     handleDecrease,
-    handleIncrease, refreshCart, handleAddToCart, handleEmptyCart, handleAddPokeBall, handleIncreasePokeBall }}>
+    handleIncrease, refreshCart, handleAddToCart, handleEmptyCart, handleAddPokeBall, handleIncreasePokeBall, handleDecreasePokeBall }}>
       {children}
     </CartContext.Provider>
   )
