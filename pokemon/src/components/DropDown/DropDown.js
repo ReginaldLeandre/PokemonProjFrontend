@@ -19,16 +19,18 @@ const DropDown = () => {
       { token && (
       <div className="hidden md:flex flex-col right-0 w-[140px] bg-poke-lightblue absolute">
           <ul className="flex flex-col">
-            <Link to={'/user/profile'}>
+            <Link to={'/user/profile'} onClick={() => handleExtraDropDown()}>
               <li className="hover:bg-poke-grayblue p-2 pb-4 text-lg hover:cursor-pointer" >
-                <button onClick={() => handleExtraDropDown()}>Profile</button>
+                <button >Profile</button>
                 <BsPersonCircle className="text-[24px] inline ml-2"/>
               </li>
             </Link>
-            <li className="hover:bg-poke-grayblue p-2 pb-4 text-lg hover:cursor-pointer" onClick={handleLogOut}>
-              <button onClick={() => handleExtraDropDown()}>Log Out</button>
-              <BsBoxArrowInRight className="text-[24px] inline ml-2"/>
-            </li>
+            <div onClick={() => handleExtraDropDown()}>
+              <li className="hover:bg-poke-grayblue p-2 pb-4 text-lg hover:cursor-pointer" onClick={handleLogOut}>
+                <button >Log Out</button>
+                <BsBoxArrowInRight className="text-[24px] inline ml-2"/>
+              </li>
+            </div>
           </ul>
       </div> )}
     </div>

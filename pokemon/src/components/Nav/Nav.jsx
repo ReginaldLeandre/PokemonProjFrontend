@@ -68,7 +68,7 @@ const Nav = () => {
                             <BsPersonLinesFill />
                         </button>
                     </div>
-                ):(<div className="ml-auto mr-6">
+                ):(<div className="ml-auto mr-6 w-max">
                 <Link to="/auth">
                     <p className="rounded-lg hover:bg-poke-blue bg-poke-darkblue text-white mt-2 py-1 px-2 text-lg font-bold">Sign In</p>
                 </Link>
@@ -81,37 +81,40 @@ const Nav = () => {
         }
         { openDropdown && (
             <div className="bg-poke-lightblue flex flex-col md:hidden">
-            <Link to='/' className="hover:bg-poke-grayblue">
-            <img className="min-w-max h-[50px] mx-auto" src={Home} alt="Pokemon"/>
-            </Link>
-            <Link to="/pokeballs" className="hover:bg-poke-grayblue">
-            <img className="min-w-max h-[50px] mx-auto" src={PokeBalls} alt="Pokemon"/>
-            </Link>
-            <Link to="/search" className="hover:bg-poke-grayblue">
-            <img className="min-w-max h-[50px] mx-auto" src={Search} alt="Pokemon"/>
-            </Link>
-            { token && (<div className="hover:bg-poke-grayblue">
-            <Link to="/encounter">
-            <img className="min-w-max h-[50px] mx-auto" src={Encounter} alt="Pokemon"/>
-            </Link>
-            </div>)}
+                <Link to='/' className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
+                <img className="min-w-max h-[50px] mx-auto" src={Home} alt="Pokemon"/>
+                </Link>
+                <Link to="/pokeballs" className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
+                <img className="min-w-max h-[50px] mx-auto" src={PokeBalls} alt="Pokemon"/>
+                </Link>
+                <Link to="/search" className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
+                <img className="min-w-max h-[50px] mx-auto" src={Search} alt="Pokemon"/>
+                </Link>
+                { token && (<div className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
+                <Link to="/encounter">
+                <img className="min-w-max h-[50px] mx-auto" src={Encounter} alt="Pokemon"/>
+                </Link>
+                </div>)}
             <div>
-      { token && (
-      <div className="flex flex-col bg-poke-lightblue">
-          <ul className="flex flex-col">
-            <Link to={'/user/profile'}>
-              <li className="hover:bg-poke-grayblue text-lg py-3 hover:cursor-pointer" >
-                <button onClick={() => handleExtraDropDown()}>Profile</button>
-                <BsPersonCircle className="text-[24px] inline ml-2"/>
-              </li>
-            </Link>
-            <li className="hover:bg-poke-grayblue text-lg hover:cursor-pointer py-3" onClick={handleLogOut}>
-              <button onClick={() => handleExtraDropDown()}>Log Out</button>
-              <BsBoxArrowInRight className="text-[24px] inline ml-2"/>
-            </li>
-          </ul>
-      </div> )}
-    </div>
+            { token && (
+            <div className="flex flex-col bg-poke-lightblue">
+                <ul className="flex flex-col">
+                    <Link to={'/user/profile'} onClick={() => handleExtraDropDown()}>
+                    <li className="hover:bg-poke-grayblue text-lg py-3 hover:cursor-pointer" >
+                        <button >Profile</button>
+                        <BsPersonCircle className="text-[24px] inline ml-2"/>
+                    </li>
+                    </Link>
+                    <div onClick={() => handleExtraDropDown()}>
+                        <li className="hover:bg-poke-grayblue text-lg hover:cursor-pointer py-3" onClick={handleLogOut}>
+                            <button>Log Out</button>
+                            <BsBoxArrowInRight className="text-[24px] inline ml-2"/>
+                        </li>
+                    </div>
+                    
+                </ul>
+            </div> )}
+        </div>
         </div>
         )}
         
