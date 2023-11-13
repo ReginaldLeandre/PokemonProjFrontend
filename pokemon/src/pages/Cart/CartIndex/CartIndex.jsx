@@ -27,7 +27,7 @@ const CartIndex = () => {
                 <div key={index}>
                   {(p.pokeBall.ballType === 'PokeBall') && (
                     <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
-                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-green-700 via-teal-400 to-blue-300">
                       <img className="max-w-[60px] mx-auto" src={PokeBall} alt="Poke Ball" />
                     </div>
                     <div className="w-full my-auto">
@@ -49,7 +49,7 @@ const CartIndex = () => {
                   )}
                   {(p.pokeBall.ballType === 'GreatBall') && (
                     <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
-                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-green-700 via-teal-400 to-blue-300">
                       <img className="max-w-[60px] mx-auto" src={GreatBall} alt="Master Ball" />
                     </div>
                     <div className="w-full my-auto">
@@ -71,7 +71,7 @@ const CartIndex = () => {
                   )}
                   {(p.pokeBall.ballType === 'UltraBall') && (
                     <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
-                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                    <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-green-700 via-teal-400 to-blue-300">
                       <img className="max-w-[60px] mx-auto" src={UltraBall} alt="Ultra Ball" />
                     </div>
                     <div className="w-full my-auto">
@@ -93,7 +93,7 @@ const CartIndex = () => {
                   )}
                   {(p.pokeBall.ballType === 'MasterBall') && (
                     <div key={index} className="border-[8px] border-poke-yellow rounded-md bg-poke-lightyellow w-[240px] md:w-[720px] min-w-max mx-auto flex mb-6 text-lg">
-                      <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200">
+                      <div className=" mx-4 flex items-center my-auto min-w-[71.4px] min-h-[71.4px] bg-gradient-to-tr from-green-700 via-teal-400 to-blue-300">
                         <img className="max-w-[60px] mx-auto" src={MasterBall} alt="Master Ball" />
                       </div>
                       <div className="w-full my-auto">
