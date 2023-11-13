@@ -6,7 +6,7 @@ const DropDownContext = createContext()
 export const DropDownProvider = ({ children }) => {
     const [ openDropdown, setOpenDropdown ] = useState(false)
 
-    const handleOpenDrowndown = async () => {
+    const handleOpenDropdown = async () => {
         setOpenDropdown((prev) => !prev)
     }
 
@@ -15,7 +15,7 @@ export const DropDownProvider = ({ children }) => {
     }
 
     return (
-        <DropDownContext.Provider value={{handleOpenDrowndown, handleExtraDropDown, openDropdown}}>
+        <DropDownContext.Provider value={{handleOpenDropdown, handleExtraDropDown, openDropdown}}>
           {children}
         </DropDownContext.Provider>
       )
