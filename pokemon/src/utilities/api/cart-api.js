@@ -109,3 +109,21 @@ export async function emptyCart() {
     return new Error("Invalid Request")
   }
 }
+
+//router.put('/addPokeBall', requireToken, cartController.addBall)
+export async function addPokeBallCart(ballType) {
+  const res = await fetch(`${cartURL}/addPokeBall?ballType=${ballType}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+
+  if (res.ok) {
+    return res.json() 
+  }
+  else {
+    return new Error("Invalid Request")
+  }
+} 
+

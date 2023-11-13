@@ -70,3 +70,15 @@ export async function emptyCart() {
         return err
     }
 }
+
+
+export async function addPokeBallCart(ballType) {
+    try{
+        const data = await cartApi.addPokeBallCart(ballType)
+        return data
+    }
+    catch(err){
+        console.log("(addPokeBallCart)service file error: ", err)
+        return err
+    }
+}
