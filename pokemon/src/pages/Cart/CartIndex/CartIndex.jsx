@@ -9,7 +9,7 @@ import UltraBall from '../../../assets/pokeballs/ultraball.webp'
 import MasterBall from '../../../assets/pokeballs/masterball.webp'
 
 const CartIndex = () => {
-  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart } = useCart()
+  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall } = useCart()
   const [ openEmptyCart, setOpenEmptyCart ] = useState(false)
 
   const handleOpenEmptyCart = async () => {
@@ -37,7 +37,7 @@ const CartIndex = () => {
                     <div className="flex my-auto min-w-[90px]">
                       <p className="my-auto mr-2">Qty: </p>
                       <div className="my-auto flex flex-col items-center">
-                        <BsCaretUpFill onClick={() => handleIncrease(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
+                        <BsCaretUpFill onClick={() => handleIncreasePokeBall(p.pokeBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mb-1"/>
                         <span className="border-[1px] border-[gray] bg-white py-1 px-2">{p.quantity}</span>
                         <BsCaretDownFill onClick={() => handleDecrease(p.pokBall.ballType)} className="hover:cursor-pointer hover:text-[20px] mt-1"/>
                       </div>

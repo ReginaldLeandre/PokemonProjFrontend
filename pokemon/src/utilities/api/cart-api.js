@@ -76,6 +76,20 @@ export async function remPokeFromCart(pokemonName) {
   }
 }
 
+// router.put('/incPokeBall', requireToken, cartController.increasePokeBall)
+export async function incPokeBall(pokeBall) {
+  const res = await fetch(`${cartURL}/incPokeBall?pokeBall=${pokeBall}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+  if (res.ok) {
+    return res.json()
+  } else {
+    return new Error("Invalid Request")
+  }
+}
 
 
 // router.put('/addPokemonPage', requireToken, cartController.addPokeId)

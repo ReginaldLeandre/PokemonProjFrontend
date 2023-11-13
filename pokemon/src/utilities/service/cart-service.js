@@ -82,3 +82,14 @@ export async function addPokeBallCart(ballType) {
         return err
     }
 }
+
+export async function incPokeBall(ballType) {
+    try {
+        const data = await cartApi.incPokeBall(ballType)
+        return data
+    }
+    catch(err) {
+        console.log("(incPokeBall)service file error: ", err)
+        return err
+    }
+}
