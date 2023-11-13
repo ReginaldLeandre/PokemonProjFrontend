@@ -3,6 +3,10 @@ import Spinner from '../../../components/Spinner/Spinner'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../../data/CartContext'
 import { BsCaretUpFill, BsCaretDownFill } from 'react-icons/bs'
+import PokeBall from '../../../assets/pokeballs/pokeball.webp'
+import GreatBall from '../../../assets/pokeballs/greatball.webp'
+import UltraBall from '../../../assets/pokeballs/ultraball.webp'
+import MasterBall from '../../../assets/pokeballs/masterball.webp'
 
 const CartIndex = () => {
   const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart } = useCart()
@@ -21,7 +25,30 @@ const CartIndex = () => {
               <div className="mx-6 mt-10">
               {cartData.pokeBallItems.map((p, index) => (
                 <div key={index}>
-                  {/* this will be for our pokeball items */}
+                  {(p.pokeBall.ballType === 'PokeBall') && (
+                    <div>
+                    <p>Poké Ball</p>
+                    <img src={PokeBall} className="w-[79.39px]"/>
+                    </div>
+                  )}
+                  {(p.pokeBall.ballType === 'GreatBall') && (
+                    <div>
+                    <p>Great Ball</p>
+                    <img src={GreatBall} className="w-[79.39px]"/>
+                    </div>
+                  )}
+                  {(p.pokeBall.ballType === 'UltraBall') && (
+                    <div>
+                    <p>Ultra Ball</p>
+                    <img src={UltraBall} className="w-[79.39px]"/>
+                    </div>
+                  )}
+                  {(p.pokeBall.ballType === 'MasterBall') && (
+                    <div>
+                    <p>Master Ball</p>
+                    <img src={MasterBall} className="w-[79.39px]"/>
+                    </div>
+                  )}
                 </div>
               ))}
               {cartData.pokemonItems.map((p, index) => (
