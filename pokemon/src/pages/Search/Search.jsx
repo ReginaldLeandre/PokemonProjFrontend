@@ -45,14 +45,14 @@ const Search = () => {
           onChange={handleInputChange}
           className="border-[1px] rounded w-[300px] px-2"
         />
-        <button type="submit" className="ml-4 bg-poke-blue text-white px-2 py-1 font-bold rounded hover:bg-poke-darkblue">Search</button>
+        <button type="submit" className="mt-4 sm:mt-0 ml-4 bg-poke-blue text-white px-4 py-1 font-bold rounded hover:bg-poke-darkblue">Search</button>
       </form>
       {!loading ? (
          <div className="w-max mx-auto mt-10">
          <Link to={`/poke/${searchResults.pokeDexId}`}>
 
                 <div className="hover:scale-105 border-[8px] border-poke-yellow rounded-md">
-                <img className="border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
+                <img className="w-[200px] sm:w-[400px] border-[8px] border-poke-lightyellow bg-gradient-to-tr from-indigo-700 via-blue-400 to-teal-200"
                   src={searchResults.home}
                   alt={searchResults.pokemonName}
                 />
@@ -68,12 +68,12 @@ const Search = () => {
               </Link>
        </div>
       ) : (
-          <div className="w-max mx-auto mt-[100px]">
+          <div className="mx-auto mt-[100px]">
           <div className="flex justify-center">
           <Spinner/>
           </div>
-          <p className="my-4 text-lg font-[PKMN]">Search for a Pokémon by name or using its National Pokédex number.</p>
-          <p className="my-4 text-lg font-[PKMN]">Need a hint? Try <span className="text-blue-400">Pikachu</span> or <span className="text-blue-400">25</span></p>
+          <p className="m-4 text-lg font-[PKMN]">Search for a Pokémon by name or using its National Pokédex number.</p>
+          <p className="m-4 text-lg font-[PKMN]">Need a hint? Try <span className="text-blue-400">Pikachu</span> or <span className="text-blue-400">25</span></p>
           </div>
       )}
     </div>
