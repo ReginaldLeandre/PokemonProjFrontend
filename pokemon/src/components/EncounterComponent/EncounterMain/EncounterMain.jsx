@@ -1,17 +1,16 @@
 import React from 'react'
 import pokemonGrassBg from '../../../assets/pokemon-grass-background.jpeg'
-import { useNavigate } from 'react-router-dom'
-import EncounterBag from '../EncounterBag/EncounterBag'
 import { useState, useEffect } from 'react';
 import { encounterPoke } from '../../../utilities/service/pokemon-service'
 import Spinner from '../../Spinner/Spinner';
+import { catchPoke } from '../../../utilities/service/pokemon-service'
 
 const EncounterMain = () => {
-    const navigate = useNavigate();
     const [pokeData, setPokeData] = useState()
     const [openBag, setOpenBag] = useState(false);
     const [loading, setLoading] = useState(true)
-    
+    const [catchMsg, setCatchMsg] = useState(null)
+
     function handleRun() {
         window.location.reload()
     }
@@ -23,9 +22,9 @@ const EncounterMain = () => {
     useEffect(() => {
         async function handleRequest() {
           try {
-            
             const pokeResponse = await encounterPoke()
             console.log("this is pokeResponse: ", pokeResponse)
+            
             if (pokeResponse) {
               setPokeData(pokeResponse)
               console.log("this is pokeData: ", pokeData)
@@ -41,6 +40,16 @@ const EncounterMain = () => {
         }
       }, [loading])
 
+      const handleCatch = async (ballType) => {
+        try {
+            const catchResponse = await catchPoke(pokeData.pokeDexId, ballType)
+            console.log("This is the catch Response: ", catchResponse)
+            setCatchMsg(catchResponse)
+        }
+        catch(err) {
+            console.error(err)
+        }
+      }
 
     return ( 
         <div>
@@ -53,7 +62,12 @@ const EncounterMain = () => {
               </div>
               <div className="grid grid-cols-3 w-[540px] xl:w-[720px] max-w-[80vw]">
                   <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
-                      <p className="md:text-2xl p-4">A wild {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} appeared! What will you do?</p>
+                      {catchMsg? 
+                      (
+                        <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
+                      ) : (
+                        <p className="md:text-2xl p-4">A wild {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} appeared! What will you do?</p>
+                      )}
                   </div>
                   <div className="md:text-2xl grid">
                       <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
@@ -63,7 +77,38 @@ const EncounterMain = () => {
           </div>
           <div className="lg:w-max mt-10">
               {openBag &&
-              <EncounterBag pokeDexId={pokeData.pokeDexId}/>
+              <div className="border-[2px] border-[black] mx-auto lg:mx-0 w-[240px] md:w-[400px] md:text-xl lg:w-[300px] font-[PKMN]">
+              <div className="p-4">Bag</div>
+              <div className="border-t-[1px] border-[black] p-2">
+                  <div className="flex justify-around my-1">
+                      <p>Poké Ball</p>
+                      <p>x5</p>
+                  </div>
+                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("PokeBall")}>USE</button>
+              </div>
+              <div className="border-t-[1px] border-[black] p-2">
+                  <div className="flex justify-around my-1">
+                      <p>Great Ball</p>
+                      <p>x5</p>
+                  </div>
+                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("GreatBall")}>USE</button>
+              </div>
+              <div className="border-t-[1px] border-[black] p-2">
+                  <div className="flex justify-around my-1">
+                      <p>Ultra Ball</p>
+                      <p>x5</p>
+                  </div>
+                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("UltraBall")}>USE</button>
+              </div>
+              <div className="border-t-[1px] border-[black] p-2">
+                  <div className="flex justify-around my-1">
+                      <p>Master Ball</p>
+                      <p>x5</p>
+                  </div>
+                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("MasterBall")}>USE</button>
+              </div>
+          </div>
+
               }
           </div>
         </div>
