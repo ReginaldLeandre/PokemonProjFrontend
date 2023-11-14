@@ -11,9 +11,16 @@ import MasterBall from '../../../assets/pokeballs/masterball.webp'
 const CartIndex = () => {
   const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall, handleDecreasePokeBall } = useCart()
   const [ openEmptyCart, setOpenEmptyCart ] = useState(false)
+  const [ openCheckout, setOpenCheckout ] = useState(false)
 
   const handleOpenEmptyCart = async () => {
     setOpenEmptyCart((prev) => !prev)
+    setOpenCheckout(false)
+}
+
+  const handleOpenCheckout = async () => {
+    setOpenCheckout((prev) => !prev)
+    setOpenEmptyCart(false)
 }
 
   return (
@@ -161,6 +168,18 @@ const CartIndex = () => {
                   </tbody>
                 </table>
                 <div>
+                    {/* PURCHASE */}
+                    <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-2 py-1 rounded font-bold my-6" onClick={() => handleOpenCheckout()}>Checkout</button>
+                      {openCheckout && 
+                        <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mb-4 bg-poke-lightblue"> 
+                          <p className="mb-1">Are you ready to purchase? </p>
+                          <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold">Yes</button>
+                          <br></br>
+                          <button className="bg-red-500 my-2 px-6 py-1 rounded text-white hover:bg-red-400 font-bold" onClick={() => handleOpenCheckout()}>No</button> 
+                        </div>
+                      }
+                </div>
+                <div>
                     {/* EMPTY CART */}
                     <button className="bg-red-500 text-white rounded px-2 py-1 font-bold hover:bg-red-400 my-6" onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
                       {openEmptyCart && 
@@ -171,7 +190,7 @@ const CartIndex = () => {
                           <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold" onClick={() => handleOpenEmptyCart()}>No</button> 
                         </div>
                       }
-                  </div>
+                </div>
               </div>
               
             </div>
