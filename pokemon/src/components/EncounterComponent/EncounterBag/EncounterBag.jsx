@@ -16,7 +16,7 @@ const EncounterBag = (props) => {
     }
 
     return (
-        <div className="border-[2px] border-[black] w-[30vw] lg:w-[300px] font-[PKMN]">
+        <div className="border-[2px] border-[black] mx-auto lg:mx-0 w-[240px] md:w-[400px] md:text-xl lg:w-[300px] font-[PKMN]">
             <div className="p-4">Bag</div>
             <div className="border-t-[1px] border-[black] p-2">
                 <div className="flex justify-around my-1">

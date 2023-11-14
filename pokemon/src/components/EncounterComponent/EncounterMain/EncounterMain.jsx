@@ -45,27 +45,27 @@ const EncounterMain = () => {
     return ( 
         <div>
         { !loading ? (
-            <div className="flex gap-10 w-max mx-auto">
-        <div className="flex flex-col w-max border-[2px] border-[black] mt-10 font-[PKMN]">
-            <div className="flex items-center justify-center">
-                <img src={pokemonGrassBg} alt="grass background scene from Pokemon" className="max-w-[80vw]"/>
-                <img className="absolute w-[20%]" src={pokeData.home} alt={pokeData.pokemonName}/>
-            </div>
-            <div className="grid grid-cols-3 w-[900px] max-w-[80vw]">
-                <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
-                    <p className="sm:text-2xl p-4">A wild {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} appeared! What will you do?</p>
-                </div>
-                <div className="sm:text-2xl grid">
-                    <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
-                    <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
-                </div>
-            </div>
-        </div>
-        <div className="w-max mt-10">
-            {openBag &&
-            <EncounterBag pokeDexId={pokeData.pokeDexId}/>
-            }
-        </div>
+        <div className="lg:flex gap-10 w-max mx-auto">
+          <div className="flex flex-col w-max border-[2px] border-[black] mt-10 font-[PKMN]">
+              <div className="flex items-center justify-center">
+                  <img src={pokemonGrassBg} alt="grass background scene from Pokemon" className="w-[540px] xl:w-[720px] max-w-[80vw]"/>
+                  <img className="absolute w-[40%] sm:w-[30%] md:w-[20%]" src={pokeData.home} alt={pokeData.pokemonName}/>
+              </div>
+              <div className="grid grid-cols-3 w-[540px] xl:w-[720px] max-w-[80vw]">
+                  <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
+                      <p className="md:text-2xl p-4">A wild {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} appeared! What will you do?</p>
+                  </div>
+                  <div className="md:text-2xl grid">
+                      <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
+                      <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
+                  </div>
+              </div>
+          </div>
+          <div className="lg:w-max mt-10">
+              {openBag &&
+              <EncounterBag pokeDexId={pokeData.pokeDexId}/>
+              }
+          </div>
         </div>
         ) : (
             <div className="w-max mx-auto mt-[100px]">
