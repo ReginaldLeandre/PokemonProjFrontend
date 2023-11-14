@@ -23,7 +23,7 @@ const Nav = () => {
     function handleLogOut(){
         clearUserToken()
     }
-   
+
     return (
         <>
         <div className="flex justify-between bg-poke-lightblue w-full">
@@ -53,15 +53,15 @@ const Nav = () => {
             </div>
             <div className="flex gap-10">
                 { token && !loading && (
-                     <div className="my-auto md:mx-0 mr-6 hover:scale-105">
-                     <Link to="/indexCart">
+                    <div className="my-auto md:mx-0 mr-6 hover:scale-105">
+                    <Link to="/indexCart">
                         <div className="my-auto">
-                            <BsCart className="text-[36px] inline mt-2" />
-                        {cartData && <span className="ml-[-10px] absolute h-6 w-6 bg-gradient-to-tr from-red-600 to-red-400 rounded-full text-white font-bold">{cartData.totalItems}</span>}
+                            <BsCart className="text-[36px] inline" />
+                            {cartData.totalItems > 0 && <span className="ml-[-10px] mt-[-5px] absolute h-6 w-6 bg-gradient-to-tr from-red-600 to-red-400 rounded-full text-white font-bold">{cartData.totalItems}</span>}
                         </div>
                     </Link>
-                   </div>
-                 )}
+                    </div>
+                )}
                 { token? (
                     <div className="hidden md:block text-2xl rounded-lg my-auto px-2 pt-1 mr-6 hover:bg-poke-grayblue" onClick={() => handleOpenDropdown()}>
                         <button>

@@ -176,7 +176,7 @@ const CartIndex = () => {
               
             </div>
           ) : (
-            <div>No items in the cart yet</div>
+            <div className="mt-6 text-xl font-[PKMN] text-slate-500">No items in the cart yet. </div>
           )}
         </div>
       ) : (
