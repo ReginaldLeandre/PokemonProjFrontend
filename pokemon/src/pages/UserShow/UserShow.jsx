@@ -41,7 +41,7 @@ const UserShow = () => {
       <p className="text-3xl py-2 bg-poke-grayblue">{userData.user.username}</p>
       <div className="lg:flex w-max mx-auto mt-2">
         {/* THIS DIV CONTAINS THE TWO GRIDS FOR USER POKEMON AND USER POKEBALLS */}
-        <div className="mx-auto w-max max-w-[300px] sm:max-w-[441px] lg:max-w-[582px]">
+        <div className="mx-auto w-max max-w-[208px] sm:max-w-[348px] md:max-w-[489px] lg:max-w-[630px]">
           <p className="text-2xl my-4">Your Pokémon</p>
           {userData.allUserPokemon.length ? (
           <div className="m-6">
