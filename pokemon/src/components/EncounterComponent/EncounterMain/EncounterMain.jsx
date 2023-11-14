@@ -17,7 +17,7 @@ const EncounterMain = () => {
     }
 
     function handleBag() {
-        setOpenBag(true);
+        setOpenBag((prev) => !prev);
     }
 
     useEffect(() => {
@@ -46,7 +46,6 @@ const EncounterMain = () => {
         <div>
         { !loading ? (
             <div className="flex gap-10 w-max mx-auto">
-       
         <div className="flex flex-col w-max border-[2px] border-[black] mt-10 font-[PKMN]">
             <div className="flex items-center justify-center">
                 <img src={pokemonGrassBg} alt="grass background scene from Pokemon" className="max-w-[80vw]"/>
