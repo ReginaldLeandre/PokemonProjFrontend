@@ -38,19 +38,18 @@ const UserShow = () => {
     <div>
     {!loading ? (
     <div>
-      <p className="text-3xl my-4">{userData.user.username}</p>
-      
-      <div className="sm:flex w-max mx-auto">
+      <p className="text-3xl py-2 bg-poke-grayblue">{userData.user.username}</p>
+      <div className="lg:flex w-max mx-auto mt-2">
         {/* THIS DIV CONTAINS THE TWO GRIDS FOR USER POKEMON AND USER POKEBALLS */}
-        <div>
-          <p className="text-2xl">{userData.user.username}'s Pokémon</p>
-          {userData.allUserPokemon ? (
-          <div>
+        <div className="mx-auto w-max max-w-[300px] sm:max-w-[441px] lg:max-w-[582px]">
+          <p className="text-2xl my-4">Your Pokémon</p>
+          {userData.allUserPokemon.length ? (
+          <div className="m-6">
           {/* THIS IS THE POKEMON GRID */}
-            <div className="grid grid-cols-5 border-[1px] border-black">
+            <div className="flex flex-wrap border-[1px] border-black p-2">
               {userData.allUserPokemon.map((pokemon) => (
                 <Link to={`/user/pokemon/${pokemon.pokeDexId}`}>
-                <div className="border-[1px] m-2">
+                <div className="border-[1px] m-2 w-[125px] hover:bg-slate-200">
                   <p>{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</p>
                   <p>#{pokemon.pokeDexId}</p>
                   <img className="mx-auto" src={pokemon.front} alt={pokemon.pokemonName}/>
@@ -59,6 +58,7 @@ const UserShow = () => {
               ))}
             </div>
           </div>
+          
           ) : (
             <div className="font-[PKMN] border-[1px] border-black px-4 py-2 m-6">
               <p>You don't own any Pokémon yet. </p>
@@ -76,10 +76,10 @@ const UserShow = () => {
           )}
         </div>
         
-        <div>
-          <p className="text-2xl">{userData.user.username}'s Poké Balls</p>
+        <div className="mx-auto w-max max-w-[300px] sm:max-w-[441px] lg:max-w-[582px]">
+          <p className="text-2xl my-4">Your Poké Balls</p>
           {userData.allUserPokeball ? (
-          <div>
+          <div className="m-6">
             {/* THIS IS THE POKEBALLS GRID */}
             {userData.allUserPokeBall.map((pokeball) => (
               <div className="border-[1px] w-max mx-auto">
