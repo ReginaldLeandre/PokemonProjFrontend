@@ -169,9 +169,9 @@ const CartIndex = () => {
                 </table>
                 <div>
                     {/* PURCHASE */}
-                    <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-2 py-1 rounded font-bold my-6" onClick={() => handleOpenCheckout()}>Checkout</button>
+                    <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-2 py-1 rounded font-bold mt-6" onClick={() => handleOpenCheckout()}>Checkout</button>
                       {openCheckout && 
-                        <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mb-4 bg-poke-lightblue"> 
+                        <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mt-6 bg-poke-lightblue"> 
                           <p className="mb-1">Are you ready to purchase? </p>
                           <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold">Yes</button>
                           <br></br>
@@ -181,9 +181,9 @@ const CartIndex = () => {
                 </div>
                 <div>
                     {/* EMPTY CART */}
-                    <button className="bg-red-500 text-white rounded px-2 py-1 font-bold hover:bg-red-400 my-6" onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
+                    <button className="bg-red-500 text-white rounded px-2 py-1 font-bold hover:bg-red-400 mt-6" onClick={() => handleOpenEmptyCart()}>Empty Cart</button>
                       {openEmptyCart && 
-                        <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mb-4 bg-poke-lightblue"> 
+                        <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mt-6 bg-poke-lightblue"> 
                           <p>Are you sure you want to empty your cart? </p>
                           <button className="bg-red-500 my-2 px-6 py-1 rounded text-white hover:bg-red-400 font-bold" onClick={() => handleEmptyCart()}>Yes</button>
                           <br></br>
