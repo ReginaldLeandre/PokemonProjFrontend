@@ -9,7 +9,7 @@ import UltraBall from '../../../assets/pokeballs/ultraball.webp'
 import MasterBall from '../../../assets/pokeballs/masterball.webp'
 
 const CartIndex = () => {
-  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall, handleDecreasePokeBall } = useCart()
+  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall, handleDecreasePokeBall, handlePurchase } = useCart()
   const [ openEmptyCart, setOpenEmptyCart ] = useState(false)
   const [ openCheckout, setOpenCheckout ] = useState(false)
 
@@ -172,7 +172,7 @@ const CartIndex = () => {
                       {openCheckout && 
                         <div className="border-[1px] border-poke-darkblue rounded w-max mx-auto p-4 text-lg mt-6 bg-poke-lightblue"> 
                           <p className="mb-1">Are you ready to purchase? </p>
-                          <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold">Yes</button>
+                          <button className="bg-poke-blue text-white hover:bg-poke-darkblue px-6 py-1 rounded font-bold" onClick={() => handlePurchase()}>Yes</button>
                           <br></br>
                           <button className="bg-red-500 my-2 px-6 py-1 rounded text-white hover:bg-red-400 font-bold" onClick={() => handleOpenCheckout()}>No</button> 
                         </div>

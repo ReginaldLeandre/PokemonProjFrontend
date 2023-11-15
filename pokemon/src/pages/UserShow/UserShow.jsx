@@ -2,10 +2,6 @@ import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { userShow } from '../../utilities/service/auth-service'
 import Spinner from '../../components/Spinner/Spinner'
-import pokeball from '../../assets/pokeballs/pokeball.webp'
-import greatball from '../../assets/pokeballs/greatball.webp'
-import ultraball from '../../assets/pokeballs/ultraball.webp'
-import masterball from '../../assets/pokeballs/masterball.webp'
 
 const UserShow = () => {
   const  [ userData, setUserData ] = useState(null)
@@ -48,7 +44,7 @@ const UserShow = () => {
           {/* THIS IS THE POKEMON GRID */}
             <div className="flex flex-wrap border-[1px] border-black p-2">
               {userData.allUserPokemon.map((pokemon) => (
-                <Link to={`/user/pokemon/${pokemon.pokeDexId}`}>
+                <Link to={`/user/pokemon/${pokemon.pokeDexId}`} key={pokemon._id}>
                 <div className="border-[1px] m-2 w-[125px] hover:bg-slate-200">
                   <p>{pokemon.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</p>
                   <p>#{pokemon.pokeDexId}</p>

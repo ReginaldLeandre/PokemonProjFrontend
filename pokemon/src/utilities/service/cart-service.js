@@ -100,7 +100,18 @@ export async function decPokeBall(ballType) {
         return data
     }
     catch(err) {
-        console.log("(incPokeBall)service file error: ", err)
+        console.log("(decPokeBall)service file error: ", err)
+        return err
+    }
+}
+
+export async function purchaseItems() {
+    try {
+        const data = await cartApi.purchase() 
+        return data
+    }
+    catch(err) {
+        console.log("(purchaseItems)service file error: ", err)
         return err
     }
 }

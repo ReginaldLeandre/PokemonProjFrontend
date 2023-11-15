@@ -156,3 +156,20 @@ export async function addPokeBallCart(ballType) {
   }
 } 
 
+
+//router.post('/purchase', requireToken, cartController.purchase)
+export async function purchase() {
+  const res = await fetch(`${cartURL}/purchase`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  })
+
+  if (res.ok) {
+    return res.json() 
+  }
+  else {
+    return new Error("Invalid Request")
+  }
+} 
