@@ -2,6 +2,10 @@ import React, { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { userShow } from '../../utilities/service/auth-service'
 import Spinner from '../../components/Spinner/Spinner'
+import PokeBallPic from '../../assets/pokeballs/pokeball.webp'
+import GreatBallPic from '../../assets/pokeballs/greatball.webp'
+import UltraBallPic from '../../assets/pokeballs/ultraball.webp'
+import MasterBallPic from '../../assets/pokeballs/masterball.webp'
 
 const UserShow = () => {
   const  [ userData, setUserData ] = useState(null)
@@ -72,19 +76,43 @@ const UserShow = () => {
           )}
         </div>
         
-        <div className="mx-auto w-max max-w-[300px] sm:max-w-[441px] lg:max-w-[582px]">
+        <div className="mx-auto w-max max-w-[208px] sm:max-w-[348px] md:max-w-[489px] lg:max-w-[630px]">
           <p className="text-2xl my-4">Your Poké Balls</p>
-          {userData.allUserPokeball ? (
-          <div className="m-6">
+          {userData.allUserPokeBall.length ? (
+          <div className="m-6 flex flex-wrap border-[1px] border-black p-2">
             {/* THIS IS THE POKEBALLS GRID */}
             {userData.allUserPokeBall.map((pokeball) => (
-              <div className="border-[1px] w-max mx-auto">
-                {/* <p>{pokeball.pokemonName.charAt(0).toUpperCase() + pokemon.pokemonName.slice(1)}</p>
-                <p>#{pokemon.pokeDexId}</p>
-                <img className="mx-auto" src={pokemon.front} alt={pokemon.pokemonName}/> */}
+              <div className="m-2 border-[1px] w-[125px]">
+              {(pokeball.ballType === 'PokeBall') && (
+                <div className="w-max mx-auto" key={pokeball._id}>
+                  <p>{pokeball.ballType}</p>
+                  <img className="mx-auto w-[50px] py-6" src={PokeBallPic} alt={pokeball.ballType}/>
+                  <p>Qty: {pokeball.quantity}</p>
+                </div>
+              )}
+              {(pokeball.ballType === 'GreatBall') && (
+                <div className="w-max mx-auto" key={pokeball._id}>
+                <p>{pokeball.ballType}</p>
+                <img className="mx-auto w-[50px] py-6" src={GreatBallPic} alt={pokeball.ballType}/>
+                <p>Qty: {pokeball.quantity}</p>
+                </div>
+              )}
+              {(pokeball.ballType === 'UltraBall') && (
+                <div className="w-max mx-auto" key={pokeball._id}>
+                <p>{pokeball.ballType}</p>
+                <img className="mx-auto w-[50px] py-6" src={UltraBallPic} alt={pokeball.ballType}/>
+                <p>Qty: {pokeball.quantity}</p>
+                </div>
+              )}
+              {(pokeball.ballType === 'MasterBall') && (
+                <div className="w-max mx-auto" key={pokeball._id}>
+                <p>{pokeball.ballType}</p>
+                <img className="mx-auto w-[50px] py-6" src={MasterBallPic} alt={pokeball.ballType}/>
+                <p>Qty: {pokeball.quantity}</p>
+                </div>
+              )}
               </div>
             ))}
-          
           </div>
           ) : (
             <div className="font-[PKMN] border-[1px] border-black px-4 py-2 m-6">
