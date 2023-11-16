@@ -38,9 +38,6 @@ const PokeBalls = () => {
 
     return (
         <div>
-            <div className="my-10 text-lg">
-                {pokeballMsg && <p>{pokeballMsg}</p>}
-            </div>
             <div className="sm:grid sm:grid-cols-2 xl:grid-cols-4 w-max mx-auto gap-[50px] mt-10">
                 <div className="w-[240px] border-[2px] mb-10 sm:mb-0" >
                     <img className="p-4" src={pokeball} alt="Poke Ball"/>
@@ -98,6 +95,9 @@ const PokeBalls = () => {
                     </div>
                     <p className="border-t-[2px] px-3 py-2 sm:pt-8">A type of Poké Ball that is able to catch any type of Pokémon without fail.</p>
                 </div>
+            </div>
+            <div className="my-10 text-lg">
+                {pokeballMsg && <p>{pokeballMsg}</p>}
             </div>
         </div>
     )
