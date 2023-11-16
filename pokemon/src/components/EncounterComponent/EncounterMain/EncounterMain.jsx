@@ -4,12 +4,28 @@ import { useState, useEffect } from 'react';
 import { encounterPoke } from '../../../utilities/service/pokemon-service'
 import Spinner from '../../Spinner/Spinner';
 import { catchPoke } from '../../../utilities/service/pokemon-service'
+import { getPokeBalls } from '../../../utilities/service/auth-service'
 
 const EncounterMain = () => {
     const [pokeData, setPokeData] = useState()
+    const [ userBallData, setUserBallData] = useState([])
     const [openBag, setOpenBag] = useState(false);
     const [loading, setLoading] = useState(true)
     const [catchMsg, setCatchMsg] = useState(null)
+
+
+    const refreshPokeBalls = async () => {
+        try {
+          const userBallResponse = await getPokeBalls()
+          console.log("This is userBallResponse: ", userBallResponse)
+          if (userBallResponse) {
+            setUserBallData(userBallResponse)
+          }
+        } catch (error) {
+          console.error("This is the refreshCart error: ", error)
+        }
+      }
+
 
     function handleRun() {
         window.location.reload()
@@ -24,7 +40,14 @@ const EncounterMain = () => {
           try {
             const pokeResponse = await encounterPoke()
             console.log("this is pokeResponse: ", pokeResponse)
-            
+            const userBallResponse = await getPokeBalls()
+            console.log("this is userBallResponse: ", userBallResponse)
+
+
+            if(userBallResponse) {
+                setUserBallData(userBallResponse)
+            }
+
             if (pokeResponse) {
               setPokeData(pokeResponse)
               console.log("this is pokeData: ", pokeData)
@@ -42,9 +65,10 @@ const EncounterMain = () => {
 
       const handleCatch = async (ballType) => {
         try {
-            const catchResponse = await catchPoke(pokeData.pokeDexId, ballType)
+            const catchResponse = await catchPoke(pokeData.pokemon.pokeDexId, ballType)
             console.log("This is the catch Response: ", catchResponse)
             setCatchMsg(catchResponse)
+            refreshPokeBalls()
         }
         catch(err) {
             console.error(err)
@@ -58,7 +82,7 @@ const EncounterMain = () => {
           <div className="flex flex-col w-max border-[2px] border-[black] mt-10 font-[PKMN]">
               <div className="flex items-center justify-center">
                   <img src={pokemonGrassBg} alt="grass background scene from Pokemon" className="w-[540px] xl:w-[720px] max-w-[80vw]"/>
-                  <img className="absolute w-[40%] sm:w-[30%] md:w-[20%]" src={pokeData.home} alt={pokeData.pokemonName}/>
+                  <img className="absolute w-[40%] sm:w-[30%] md:w-[20%]" src={pokeData.pokemon.home} alt={pokeData.pokemon.pokemonName}/>
               </div>
               <div className="grid grid-cols-3 w-[540px] xl:w-[720px] max-w-[80vw]">
                   <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
@@ -66,7 +90,7 @@ const EncounterMain = () => {
                       (
                         <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
                       ) : (
-                        <p className="md:text-2xl p-4">A wild {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} appeared! What will you do?</p>
+                        <p className="md:text-2xl p-4">A wild {pokeData.pokemon.pokemonName.charAt(0).toUpperCase() + pokeData.pokemon.pokemonName.slice(1)} appeared! What will you do?</p>
                       )}
                   </div>
                   <div className="md:text-2xl grid">

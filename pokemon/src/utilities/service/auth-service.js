@@ -43,3 +43,16 @@ export async function userPokeshow(id) {
     throw err
   }
 }
+
+
+
+export async function getPokeBalls() {
+  try{
+    const data = await AuthAPI.userPokeBalls()
+    return data
+  }
+  catch(err) {
+    console.log("This is the user's pokeballs for catch page error: ", err)
+    throw err
+  }
+}

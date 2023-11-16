@@ -85,3 +85,24 @@ export async function userPokeshow(id) {
   }
 
 }
+
+
+// router.get('/getPokeBalls', requireToken, authCtrl.balls4Catch)
+export async function userPokeBalls() {
+
+  const url = `${authURL}/getPokeBalls`
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getUserToken()}`
+    }
+  }
+
+  const response = await fetch(url, options)
+  if(response.ok){
+    return response.json()
+  } else {
+    throw new Error(response.statusText)
+  }
+
+}
