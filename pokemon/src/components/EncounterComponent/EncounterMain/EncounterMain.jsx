@@ -12,7 +12,7 @@ const EncounterMain = () => {
     const [openBag, setOpenBag] = useState(false);
     const [loading, setLoading] = useState(true)
     const [catchMsg, setCatchMsg] = useState(null)
-
+    const [loading2, setLoading2] = useState(true)
 
     const refreshPokeBalls = async () => {
         try {
@@ -20,6 +20,7 @@ const EncounterMain = () => {
           console.log("This is userBallResponse: ", userBallResponse)
           if (userBallResponse) {
             setUserBallData(userBallResponse)
+            setLoading2(false)
           }
         } catch (error) {
           console.error("This is the refreshCart error: ", error)
@@ -34,6 +35,13 @@ const EncounterMain = () => {
     function handleBag() {
         setOpenBag((prev) => !prev);
     }
+    useEffect(() => {
+        if (loading2) {
+        refreshPokeBalls()
+        }
+      }, [loading2])
+
+
 
     useEffect(() => {
         async function handleRequest() {
@@ -99,42 +107,25 @@ const EncounterMain = () => {
                   </div>
               </div>
           </div>
-          <div className="lg:w-max mt-10">
-              {openBag &&
+          { openBag &&
+           <div className="lg:w-max mt-10">
               <div className="border-[2px] border-[black] mx-auto lg:mx-0 w-[240px] md:w-[400px] md:text-xl lg:w-[300px] font-[PKMN]">
               <div className="p-4">Bag</div>
-              <div className="border-t-[1px] border-[black] p-2">
-                  <div className="flex justify-around my-1">
-                      <p>Poké Ball</p>
-                      <p>x5</p>
-                  </div>
-                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("PokeBall")}>USE</button>
-              </div>
-              <div className="border-t-[1px] border-[black] p-2">
-                  <div className="flex justify-around my-1">
-                      <p>Great Ball</p>
-                      <p>x5</p>
-                  </div>
-                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("GreatBall")}>USE</button>
-              </div>
-              <div className="border-t-[1px] border-[black] p-2">
-                  <div className="flex justify-around my-1">
-                      <p>Ultra Ball</p>
-                      <p>x5</p>
-                  </div>
-                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("UltraBall")}>USE</button>
-              </div>
-              <div className="border-t-[1px] border-[black] p-2">
-                  <div className="flex justify-around my-1">
-                      <p>Master Ball</p>
-                      <p>x5</p>
-                  </div>
-                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch("MasterBall")}>USE</button>
-              </div>
-          </div>
+            {userBallData.availableBalls.map((ball) => (
 
-              }
-          </div>
+
+            <div className="border-t-[1px] border-[black] p-2">
+                  <div className="flex justify-around my-1">
+                      <p>{ball.ballType}</p>
+                      <p>{ball.quantity}x</p>
+                  </div>
+                  <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch(ball.ballType)}>USE</button>
+              </div>                       
+            ))                                      
+            } 
+        
+          </div>       
+          </div>}
         </div>
         ) : (
             <div className="w-max mx-auto mt-[100px]">
