@@ -95,7 +95,7 @@ const EncounterMain = () => {
           <div className="flex flex-col w-max border-[2px] border-[black] mt-10 font-[PKMN]">
               <div className="flex items-center justify-center">
                   <img src={pokemonGrassBg} alt="grass background scene from Pokemon" className="w-[540px] xl:w-[720px] max-w-[80vw]"/>
-                  {catchMsg.changeToPokeball ? (
+                  {catchMsg && catchMsg.changeToPokeball ? (
                       <div className="absolute w-[200px]">
                       {catchMsg.pokemon.pokeBall === 'PokeBall' &&  (
                         <img src={PokeBall} alt="Poké Ball"/>
