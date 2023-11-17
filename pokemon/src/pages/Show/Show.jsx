@@ -39,7 +39,9 @@ const Show = () => {
   return (
     <div className="">
     {!loading ? (
-      <>
+      <div>
+      {pokeData.home ? (
+        <>
       <div className="lg:flex w-max mx-auto">
         <div className="flex flex-col w-[300px] mx-auto lg:m-10 bg-poke-yellow border-[8px] border-poke-yellow rounded mt-6 h-max">
           <h2>#{pokeData.pokeDexId}</h2>
@@ -95,6 +97,13 @@ const Show = () => {
           </div>
       </div>
       </>
+      ) : (
+        <div className="my-6 font-[PKMN] text-lg mx-4">
+          <p>Sorry, this Pokémon's page does not exist.</p>
+          <p>Try <Link to="/search" className="text-blue-400 hover:text-poke-blue">searching</Link> again. </p>
+          </div>
+      )}
+      </div>
     ) : (
       <div className="w-max mx-auto mt-[100px]">
         <div className="flex justify-center">
