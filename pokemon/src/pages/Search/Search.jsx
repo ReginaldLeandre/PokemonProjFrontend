@@ -10,7 +10,6 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState(null)
   const [ loading, setLoading ] = useState(true)
 
-
   const handleInputChange = (e) => {
     setSearchData(e.target.value)
   }
@@ -48,7 +47,6 @@ const Search = () => {
         <button type="submit" className="mt-4 sm:mt-0 ml-4 bg-poke-blue text-white px-4 py-1 font-bold rounded hover:bg-poke-darkblue">Search</button>
       </form>
       {!loading ? (
-
         <div className="w-max mx-auto mt-10">
           {searchResults.pokemonName ? (
             <Link to={`/poke/${searchResults.pokeDexId}`}>
@@ -66,8 +64,8 @@ const Search = () => {
               </div>
             </Link>
           ) : (
-            <div>
-              <p>Error</p>
+            <div className="font-[PKMN] text-xl">
+              <p className="">That is not a valid search query.</p>
             </div>
           )}
       </div>
