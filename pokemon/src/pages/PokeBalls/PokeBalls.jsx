@@ -9,7 +9,7 @@ import { useCart } from '../../data/CartContext'
 const PokeBalls = () => {
     const { handleAddPokeBall } = useCart()
     const [pokeballMsg, setPokeballMsg] = useState(null)
-
+    const token = localStorage.getItem("token");
     const handlePokeballMessage = async (ballType) => {
         try {
             const addingBall = await handleAddPokeBall(ballType)
@@ -45,12 +45,19 @@ const PokeBalls = () => {
                         <p>Poké Ball</p>
                         <p>$5</p>
                     </div>
+                    { token ? (
                     <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                         <p className="my-auto">Add to Cart</p>
                         <button className="hover:scale-105" onClick={() => handlePokeballMessage("PokeBall")}>
                             <BsCartPlus className="text-[32px]"/>
                         </button>
                     </div> 
+                    ) : (
+                    <div>
+
+                    </div>
+                    )}
+                    
                     <p className="border-t-[2px] p-2 sm:px-2 sm:py-4">A device for catching wild Pokémon. It's thrown like a ball, comfortably encapsulating its target.</p>
                 </div>
                 <div className="w-[240px] border-[2px] mb-10 sm:mb-0">
@@ -59,12 +66,17 @@ const PokeBalls = () => {
                         <p>Great Ball</p>
                         <p>$10</p>
                     </div>
+                    {token ? (
                     <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                         <p className="my-auto">Add to Cart</p>
                         <button className="hover:scale-105" onClick={() => handlePokeballMessage("GreatBall")}>
                             <BsCartPlus className="text-[32px]"/>
                         </button>
                     </div>
+                    ) : (
+                        <div></div>
+                    ) }
+                    
                     <p className="border-t-[2px] p-2">A type of Poké Ball that has a 50% higher chance to successfully catch a Pokémon than that of a regular Poké Ball.</p>
                 </div>
                 <div className="w-[240px] border-[2px] mb-10 sm:mb-0" >
@@ -73,12 +85,17 @@ const PokeBalls = () => {
                         <p>Ultra Ball</p>
                         <p>$20</p>
                     </div>
+                    { token ? (
                     <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                         <p className="my-auto">Add to Cart</p>
                         <button className="hover:scale-105" onClick={() => handlePokeballMessage("UltraBall")}>
                             <BsCartPlus className="text-[32px]"/>
                         </button>
                     </div>
+                    ) : (
+                        <div></div>
+                    ) }
+                    
                     <p className="border-t-[2px] p-2">A Poké Ball that has a 2x catch rate modifier, double of that of a standard Poké Ball and 33% more of that of a Great Ball.</p>
                 </div>
                 <div className="w-[240px] border-[2px] mb-10 sm:mb-0">
@@ -87,12 +104,17 @@ const PokeBalls = () => {
                         <p>Master Ball</p>
                         <p>$50</p>
                     </div>
+                    { token ? (
                     <div className="flex justify-center gap-10 border-t-[2px] py-2 text-lg">
                         <p className="my-auto">Add to Cart</p>
                         <button className="hover:scale-105" onClick={() => handlePokeballMessage("MasterBall")}>
                             <BsCartPlus className="text-[32px]"/>
                         </button>
                     </div>
+                    ) : (
+                        <div></div>
+                    )}
+                    
                     <p className="border-t-[2px] px-3 py-2 sm:pt-8">A type of Poké Ball that is able to catch any type of Pokémon without fail.</p>
                 </div>
             </div>
