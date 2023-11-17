@@ -40,6 +40,7 @@ const EncounterMain = () => {
     function handleBag() {
         setOpenBag((prev) => !prev);
     }
+
     useEffect(() => {
         if (loading2) {
         refreshPokeBalls()
@@ -123,36 +124,50 @@ const EncounterMain = () => {
                         <p className="md:text-2xl p-4">A wild {pokeData.pokemon.pokemonName.charAt(0).toUpperCase() + pokeData.pokemon.pokemonName.slice(1)} appeared! What will you do?</p>
                       )}
                   </div>
-                  <div className="md:text-2xl grid">
-                      <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
-                      <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
-                  </div>
+                  {catchMsg && catchMsg.changeToPokeball ? (
+                    <div> 
+                    </div>
+                  ) : (
+                    <div className="md:text-2xl grid">
+                        <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
+                        <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
+                    </div>
+                    
+                  ) }
+                  
+                  
               </div>
           </div>
-          { openBag &&
-          <div className="lg:w-max mt-10">
-            <div className="border-[2px] border-[black] mx-auto lg:mx-0 w-[240px] md:w-[400px] md:text-xl lg:w-[300px] font-[PKMN]">
-              <div className="p-4">Bag</div>
-              {userBallData.availableBalls.length ? (
-                <div>
-                  {userBallData.availableBalls.map((ball) => (
-                  <div className="border-t-[1px] border-[black] p-2">
-                      <div className="flex justify-around my-1">
-                          <p>{ball.ballType}</p>
-                          <p>{ball.quantity}x</p>
-                      </div>
-                      <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch(ball.ballType)}>USE</button>
-                    </div>                       
-                  ))                                      
-                  }
-                </div>
+          { openBag && 
+          <div>
+            {catchMsg && catchMsg.changeToPokeball ? (
+              <div>
+              </div>
               ) : (
-                <div className="border-t-[1px] border-[black] p-2">
-                  <p className="mb-2">You don't own any Poké Balls yet.</p>
-                  <p>Visit <Link to="/pokeballs" className="text-blue-400 hover:text-poke-blue">Poké Balls</Link> to buy them.</p>
-                </div>
-              )}
-            </div>       
+              <div className="lg:w-max mt-10">
+              <div className="border-[2px] border-[black] mx-auto lg:mx-0 w-[240px] md:w-[400px] md:text-xl lg:w-[300px] font-[PKMN]">
+                <div className="p-4">Bag</div>
+                {userBallData.availableBalls.length ? (
+                  <div>
+                    {userBallData.availableBalls.map((ball) => (
+                    <div className="border-t-[1px] border-[black] p-2">
+                        <div className="flex justify-around my-1">
+                            <p>{ball.ballType}</p>
+                            <p>{ball.quantity}x</p>
+                        </div>
+                        <button className="bg-gray-300 py-1 px-8 rounded my-2 hover:bg-gray-900 hover:text-white" onClick={() => handleCatch(ball.ballType)}>USE</button>
+                      </div>                       
+                    ))                                      
+                    }
+                  </div>
+                ) : (
+                  <div className="border-t-[1px] border-[black] p-2">
+                    <p className="mb-2">You don't own any Poké Balls yet.</p>
+                    <p>Visit <Link to="/pokeballs" className="text-blue-400 hover:text-poke-blue">Poké Balls</Link> to buy them.</p>
+                  </div>
+                )}
+              </div>       
+          </div>)}
           </div>}
         </div>
         ) : (
