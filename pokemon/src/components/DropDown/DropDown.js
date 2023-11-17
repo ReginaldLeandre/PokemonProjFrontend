@@ -11,7 +11,8 @@ const DropDown = () => {
   const { openDropDown, handleExtraDropDown } = useDropDown()
 
     function handleLogOut(){
-        clearUserToken()
+      clearUserToken()
+      window.location.reload()
     }
 
   return (

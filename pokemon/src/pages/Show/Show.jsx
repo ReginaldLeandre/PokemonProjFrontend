@@ -9,6 +9,7 @@ import {BsCartPlus} from 'react-icons/bs'
 
 
 const Show = () => {
+    const token = localStorage.getItem("token")
     const [pokeData, setPokeData] = useState([])
     const [loading, setLoading] = useState(true)
     const { id } = useParams()
@@ -57,12 +58,16 @@ const Show = () => {
               </li>
           ))}
           </ul>
+          { token ? (
           <div className="p-3 bg-poke-lightyellow" >
             <button className="bg-poke-lightblue hover:scale-105 py-1 px-2 rounded border-[1px] border-black" onClick={() => handleAddToCart(pokeData.pokeDexId)}>
               Add {pokeData.pokemonName.charAt(0).toUpperCase() + pokeData.pokemonName.slice(1)} to Cart
               <BsCartPlus className="inline ml-2 text-[24px] my-auto pb-1"/>
             </button>
-          </div>
+          </div>) : (
+            <div></div>
+          )}
+          
         </div>
           <div>
             <p className="w-[300px] sm:w-[560px] border-[2px] my-10 mx-auto lg:mr-10 p-4 border-poke-blue bg-poke-lightyellow">{pokeData.description}</p>

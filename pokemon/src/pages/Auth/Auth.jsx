@@ -9,23 +9,23 @@ import { useNavigate } from "react-router"
 
 function Auth() {
   const { setAuth, setUser } = useContext(UserContext)
-  // console.log(setAuth, setUser)
+ 
   const [showRegisterForm, setShowRegisterForm] = useState(false)
   const token = localStorage.getItem("token")
   const nav = useNavigate()
-
+  const [ navFromAuth, setNavFromAuth ] = useState(false)
 
   const handleRegisterUser = async (data) => {
     try {
       const parsedUser = await signUp(data)
       if (parsedUser.token) {
-        // sets local storage
+        
         setUserToken(parsedUser.token)
-        // put the returned user object in state
+        
         setUser(parsedUser.user)
-        // adds a boolean cast of the responses isAuthenticated prop
+        setNavFromAuth(true)
       } else {
-        throw `This is the Handle Sign Error: ${parsedUser.err}`
+        throw `This is the Handle Sign up Error: ${parsedUser.err}`
       }
     } catch (err) {
       console.log(err)
@@ -40,6 +40,7 @@ function Auth() {
       if (parsedUser.token) {
         setUserToken(parsedUser.token)
         setUser(parsedUser.user)
+        setNavFromAuth(true)
       } else {
         throw `This is the Handle Login Error: ${parsedUser.err}`
       }
@@ -54,7 +55,7 @@ function Auth() {
     if(token){
       nav('/user/profile')
     }
-  }, [])
+  }, [navFromAuth])
 
   return (
     <div>
