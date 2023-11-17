@@ -115,28 +115,28 @@ const EncounterMain = () => {
                     <img className="absolute w-[40%] sm:w-[30%] md:w-[20%]" src={pokeData.pokemon.home} alt={pokeData.pokemon.pokemonName}/>
                     )}
               </div>
+              {catchMsg && catchMsg.changeToPokeball ? (
+                <div className="w-[540px] xl:w-[720px] max-w-[80vw] min-h-[128px]"> 
+                  <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
+                  <Link to="/user/profile">
+                    <button className='bg-poke-lightblue px-4 py-2 rounded'>View All Pokémon</button>
+                  </Link>
+                </div>
+              ) : (
               <div className="grid grid-cols-3 w-[540px] xl:w-[720px] max-w-[80vw]">
-                  <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
-                      {catchMsg? 
-                      (
-                        <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
-                      ) : (
-                        <p className="md:text-2xl p-4">A wild {pokeData.pokemon.pokemonName.charAt(0).toUpperCase() + pokeData.pokemon.pokemonName.slice(1)} appeared! What will you do?</p>
-                      )}
-                  </div>
-                  {catchMsg && catchMsg.changeToPokeball ? (
-                    <div> 
-                    </div>
+                <div className="border-[black] border-r-[1px] border-t-[1px] col-span-2">
+                  {catchMsg? 
+                  (
+                    <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
                   ) : (
-                    <div className="md:text-2xl grid">
-                        <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
-                        <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
-                    </div>
-                    
-                  ) }
-                  
-                  
-              </div>
+                    <p className="md:text-2xl p-4">A wild {pokeData.pokemon.pokemonName.charAt(0).toUpperCase() + pokeData.pokemon.pokemonName.slice(1)} appeared! What will you do?</p>
+                  )}
+                </div>
+                  <div className="md:text-2xl grid">
+                      <p className="border-[1px] border-[black] border-l-0 border-r-0 p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleRun}>Run</p>
+                      <p className="p-4 hover:bg-gray-300 hover:cursor-pointer" onClick={handleBag}>Bag</p>
+                  </div>
+              </div>)}
           </div>
           { openBag && 
           <div>
