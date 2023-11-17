@@ -117,9 +117,9 @@ const EncounterMain = () => {
               </div>
               {catchMsg && catchMsg.changeToPokeball ? (
                 <div className="w-[540px] xl:w-[720px] max-w-[80vw] min-h-[128px]"> 
-                  <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg}</p>
+                  <p className="md:text-2xl p-4">{catchMsg.catchingPokemonMsg.slice(0,8) + catchMsg.catchingPokemonMsg.charAt(8).toUpperCase() + catchMsg.catchingPokemonMsg.slice(9)}</p>
                   <Link to="/user/profile">
-                    <button className='bg-poke-lightblue px-4 py-2 rounded'>View All Pokémon</button>
+                    <button className='bg-poke-lightblue hover:bg-blue-400 px-4 py-2 rounded mb-4'>View All Pokémon</button>
                   </Link>
                 </div>
               ) : (
