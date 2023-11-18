@@ -60,11 +60,11 @@ To view the Deployed Application [Click Here]()
 <br></br>
 <br></br>
 
-### Cart With No Items
-![Empty Cart](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartWithNoItems.png)
+<!-- ### Cart With No Items
+![Empty Cart](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartWithNoItems.png) 
 
 <br></br>
-<br></br>
+<br></br> -->
 
 ### Cart Holding Items to  Purchase
 ##### On the Cart page, users with items in their cart can conveniently modify the quantity of each item directly using the up and down arrows. The page also displays the Subtotal, Sales Tax, and Total Price of the selected items. 
