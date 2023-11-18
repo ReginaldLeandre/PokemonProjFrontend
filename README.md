@@ -8,6 +8,8 @@ This repo only contains the Frontend portion of the application. Click the link 
 
 To view the Deployed Application [Click Here]()
 
+To see our planning documentation [click here](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/planning/planning.md)!
+
 <br></br>
 <br></br>
 ### Black Market Home Page
