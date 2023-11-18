@@ -4,80 +4,137 @@
 Click the link to view the 
 [Backend](https://github.com/ReginaldLeandre/PokemonProjectBackend)
 
-
-#### Black Market Home Page
+<br></br>
+<br></br>
+### Black Market Home Page
+##### On the Home Page, users are welcomed by Pikachu, who provides instructions on navigating the application. Additionally, featured PokeMon are showcased, allowing users to view and add them to their cart.
 ![Home Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/HomePage.png)
 
-
-
-#### Poke Balls Page
-
+<br></br>
+<br></br>
+### Poke Balls Page
+##### On this page, users can buy PokeBalls for use in various parts of the application. The Master Ball, in line with the series and games lore, is restricted to a one-time purchase. Users who are not signed in can only view the available PokeBalls and cannot add any to a cart
 ![Poke Balls Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/PokeBallsNoCart.png)
+<br></br>
+<br></br>
 
-
-
-#### PokeMon's Details Page
+### PokeMon's Details Page
+##### The PokeMon details page displays specific information about the chosen PokeMon, and users can conveniently add the PokeMon to their cart directly from this page.
 ![PokeMon Details Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/PokemonShowWithCart.png)
 
+<br></br>
+<br></br>
 
-
-#### Search Page
+### Search Page
+##### The search page enables users to look up a specific PokeMon by entering either the Name or National PokeDex ID.
 ![Search Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/SearchPage.png)
 
+<br></br>
+<br></br>
 
-#### Search Page Using a National PokeDex ID
+### Search Page Using a National PokeDex ID
 ![Search Page with National PokeDex Id example](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/SearchPageNumberResult.png)
 
-#### Search Page Using a PokeMon Name
+<br></br>
+<br></br>
+
+### Search Page Using a PokeMon Name
+##### When searching for a PokeMon by name, users will need to provide an accurate spelling for a successful search.
 ![Search Page with Name example](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/SearchPageStringResult.png)
 
-#### Log In Page
+<br></br>
+<br></br>
+### Log In Page
+##### On the Login/Register page, users can either sign up or log in to unlock additional features of the application, such as the "Encounter" mini-game.
 ![Log In Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/LoginPage.png)
 
-#### Sign Up Page
+<br></br>
+<br></br>
+
+### Sign Up Page
 ![Sign Up Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/SignUpPage.png)
 
-#### Cart With No Items
+<br></br>
+<br></br>
+
+### Cart With No Items
 ![Empty Cart](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartWithNoItems.png)
 
-#### Cart Holding Items to  Purchase
+<br></br>
+<br></br>
+
+### Cart Holding Items to  Purchase
+##### On the Cart page, users with items in their cart can conveniently modify the quantity of each item directly using the up and down arrows. The page also displays the Subtotal, Sales Tax, and Total Price of the selected items. 
 ![Cart With Items](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartWithItems.png)
 
-#### Choice to Empty the Cart
+<br></br>
+<br></br>
+
+### Choice to Empty the Cart
 ![Choice of Emptying Cart](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartChoiceEmpty.png)
 
-#### Choice to Purchase the Items in Cart
+<br></br>
+<br></br>
+
+### Choice to Purchase the Items in Cart
 ![Choice of Purchasing Cart](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartChoicePurchase.png)
 
-#### User Page Without Any PokeMon or PokeBalls
+<br></br>
+<br></br>
+
+### User Page Without Any PokeMon or PokeBalls
 ![User Page Without PokeBalls or PokeMon](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserWithNoPoke.png)
 
 
-#### User's Page with PokeMon and PokeBalls
+<br></br>
+<br></br>
+
+### User's Page with PokeMon and PokeBalls
+##### In the user's profile page, PokeBalls and/or owned PokeMon will be displayed if present in the user's stash.
 ![User Page with PokeMon and PokeBalls](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserPageWithPoke.png)
 
-#### Finding a PokeMon In The Wild
+<br></br>
+<br></br>
+
+### Finding a PokeMon In The Wild
+##### In the Encounter Mini-game, users will face a random PokeMon. They can choose to either run away, in which case a new PokeMon will present itself, or open their backpack to use a PokeBall and attempt to catch the encountered PokeMon.
 ![Encounter Page](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/Encounter.png)
 
-#### Open Your Bag And Use PokeBalls to Catch
+<br></br>
+<br></br>
+
+### Open Your Bag And Use PokeBalls to Catch
 ![Encounter Bag](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/EncounterOpenBag.png)
 
-#### Caught Pokemon
+<br></br>
+<br></br>
+
+### Caught Pokemon
+##### Upon successfully catching a PokeMon, it will be added to the user's collection. Users can view their collection by pressing the "View All PokeMon" button.
 ![Encounter Caught Pokemon](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/EncounterCaughtPoke.png)
 
-#### Purchased PokeMon Details
+<br></br>
+<br></br>
+##### Below is an example of a purchased PokeMon and a caught PokeMon.
+### Purchased PokeMon Details
 ![User's Purchased Pokemon Details](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserPokemonPurchased.png)
 
+<br></br>
+<br></br>
 
 
-#### Caught PokeMon Details
+
+### Caught PokeMon Details
 ![User's Caught Pokemon Details](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserPokemonCaught.png)
 
 
+<br></br>
+<br></br>
 
 
 
-## Credits
+
+# Credits
 [Pokémon type colors](https://www.epidemicjohto.com/t882-type-colors-hex-colors)
 
 [Poké Ball spinner](https://codepen.io/vinztt/pen/XjEyvZ)
