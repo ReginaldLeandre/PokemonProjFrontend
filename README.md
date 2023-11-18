@@ -67,7 +67,7 @@
 
 
 #### Caught PokeMon Details
-![User's Caught Pokemon Details](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/CartChoiceEmpty.png)
+![User's Caught Pokemon Details](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserPokemonCaught.png)
 
 
 
