@@ -9,9 +9,11 @@ import UltraBall from '../../../assets/pokeballs/ultraball.webp'
 import MasterBall from '../../../assets/pokeballs/masterball.webp'
 
 const CartIndex = () => {
-  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall, handleDecreasePokeBall, handlePurchase } = useCart()
+  const { cartData, loading, refreshCart, handleDecrease, handleIncrease, handleEmptyCart, handleIncreasePokeBall, handleDecreasePokeBall, handlePurchase, handleCreateCart } = useCart()
   const [ openEmptyCart, setOpenEmptyCart ] = useState(false)
   const [ openCheckout, setOpenCheckout ] = useState(false)
+  const token = localStorage.getItem("token")
+
 
   const handleOpenEmptyCart = async () => {
     setOpenEmptyCart((prev) => !prev)
@@ -24,9 +26,13 @@ const CartIndex = () => {
 }
 
   return (
-    <div>
+    <>
+    { token ? (
+      <div>
       {!loading ? (
-        <div className="w-max mx-auto">
+        <>
+        { cartData.user ? (
+          <div className="w-max mx-auto">
           {cartData.pokeBallItems.length || cartData.pokemonItems.length ? (
             <div className="lg:flex">
               <div className="mt-10">
@@ -197,6 +203,15 @@ const CartIndex = () => {
             <div className="mt-6 text-xl font-[PKMN] text-slate-500 max-w-[280px] sm:max-w-max">No items in the cart yet. </div>
           )}
         </div>
+        ) : (
+          <div>
+            <p className='font-[PKMN] text-xl'>
+              You do not have a cart yet. <button onClick={() => handleCreateCart()} className="text-blue-400 hover:text-poke-blue">Create</button> one now 
+            </p>
+          </div>
+        )
+      }
+        </>
       ) : (
         <div className="w-max mx-auto mt-[100px]">
           <div className="flex justify-center">
@@ -206,6 +221,14 @@ const CartIndex = () => {
         </div>
       )}
     </div>
+    ) : (
+      <div>
+          <p className='font-[PKMN] text-xl'>
+            You are not Signed In. Please <Link to={'/auth'} className="text-blue-400 hover:text-poke-blue">Sign In</Link> to view this page.
+            </p>
+          </div>
+    )}
+   </> 
   )
 }
 

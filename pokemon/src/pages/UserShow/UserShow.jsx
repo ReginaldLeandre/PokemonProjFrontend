@@ -10,6 +10,7 @@ import MasterBallPic from '../../assets/pokeballs/masterball.webp'
 const UserShow = () => {
   const  [ userData, setUserData ] = useState(null)
   const [loading, setLoading] = useState(true)
+  const token = localStorage.getItem("token")
 
       useEffect(() => {
         async function handleRequest() {
@@ -35,7 +36,8 @@ const UserShow = () => {
 
 
   return (
-    <div>
+    <>
+    { token ? (<div>
     {!loading ? (
     <div>
       <p className="text-3xl py-2 bg-poke-grayblue">{userData.user.username}</p>
@@ -138,6 +140,14 @@ const UserShow = () => {
     )
     }
     </div>
+    ) : (
+      <div>
+          <p className='font-[PKMN] text-xl'>
+            You are not Signed In. Please <Link to={'/auth'} className="text-blue-400 hover:text-poke-blue">Sign In</Link> to view this page.
+            </p>
+        </div>
+    )}
+    </>
     
   )
 }
