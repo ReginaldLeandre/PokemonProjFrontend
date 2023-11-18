@@ -149,7 +149,7 @@ To see our planning documentation [click here](https://github.com/ReginaldLeandr
  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" width="36" height="36" alt="MongoDB" /></a>
  <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/heroku-colored.svg" width="36" height="36" alt="Heroku" /></a>
 </p>
-Additional Libraries, Modules, Frameworks, etc...
+Additional Javascript Libraries used...
 <ul>
   <li>JWT</li>
   <li>Axios</li>
