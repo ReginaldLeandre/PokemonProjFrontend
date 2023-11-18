@@ -147,6 +147,16 @@ To view the Deployed Application [Click Here]()
  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" width="36" height="36" alt="MongoDB" /></a>
  <a href="https://www.heroku.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/heroku-colored.svg" width="36" height="36" alt="Heroku" /></a>
 </p>
+Additional Libraries, Modules, Frameworks, etc...
+<ul>
+  <li>JWT</li>
+  <li>Axios</li>
+  <li>DotEnv</li>
+  <li>Cors</li>
+  <li>Passport</li>
+  <li>Morgan</li>
+  <li>Bcrypt</li>
+</ul>
 
 
 # Team
