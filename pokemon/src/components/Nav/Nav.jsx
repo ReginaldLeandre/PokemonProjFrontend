@@ -26,7 +26,7 @@ const Nav = () => {
 
     return (
         <>
-        <div className="flex justify-between bg-poke-lightblue w-full">
+        <div className="flex justify-between bg-poke-lightblue w-full sticky top-0">
             <div className="md:flex hidden">
                 <Link to='/'>
                 <img className="min-w-max ml-4 h-[50px] hover:scale-110" src={Home} alt="Pokemon"/>

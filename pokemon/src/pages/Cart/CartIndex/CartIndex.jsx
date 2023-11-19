@@ -205,7 +205,7 @@ const CartIndex = () => {
         </div>
         ) : (
           <div>
-            <p className='font-[PKMN] text-xl'>
+            <p className='font-[PKMN] text-xl m-6'>
               You do not have a cart yet. <button onClick={() => handleCreateCart()} className="text-blue-400 hover:text-poke-blue">Create</button> one now 
             </p>
           </div>
