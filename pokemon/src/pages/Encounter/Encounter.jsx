@@ -15,11 +15,10 @@ const Encounter = () => {
     
     ) : (
         <div>
-          <p className='font-[PKMN] text-xl'>
-            You are not Signed In. Please <Link to={'/auth'} className="text-blue-400 hover:text-poke-blue">Sign In</Link> to view this page.
+          <p className='font-[PKMN] text-xl m-6'>
+            You are not signed in. Please <Link to={'/auth'} className="text-blue-400 hover:text-poke-blue">Sign In</Link> to view this page.
             </p>
         </div>
-
     )}
 
 </>
