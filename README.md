@@ -101,10 +101,11 @@ To see our planning documentation [click here](https://github.com/ReginaldLeandr
 <br></br>
 <br></br>
 
-### User's Page with Pokémon and PokéB alls
+### User's Page with Pokémon and Poké Balls
 **In the user's profile page, Poké Balls and/or owned Pokémon will be displayed if present in the user's inventory.**
 
-![User Page with PokéMon and PokéBalls](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/readMePics/UserPageWithPoke.png)
+<img width="1468" alt="User Profile Page with Poke Balls and Pokemon" src="https://github.com/ReginaldLeandre/PokemonProjFrontend/assets/137251999/319b8f3b-9124-463d-a974-9eff5e611433">
+
 
 <br></br>
 <br></br>
@@ -174,6 +175,7 @@ Additional Javascript libraries used:
 
 # Team
 **Lauren Mendoza - [GitHub](https://github.com/laurencmendoza) | [LinkedIn](https://www.linkedin.com/in/lauren-c-mendoza/)**
+
 **Reginald Leandre - [GitHub](https://github.com/ReginaldLeandre) | [LinkedIn](https://www.linkedin.com/in/rleandre1992/)**
 
 
