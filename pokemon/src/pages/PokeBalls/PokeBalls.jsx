@@ -138,6 +138,11 @@ const PokeBalls = () => {
                     <p className="border-t-[2px] px-3 py-2 sm:pt-8">A type of Poké Ball that is able to catch any type of Pokémon without fail.</p>
                 </div>
             </div>
+            {pokeballMsg && pokeballMsg === 'One MasterBall can be purchased per account.' && 
+            <div className="my-4 text-red-500">
+            Only one Master Ball can be purchased per account.
+            </div>
+            }
         </div>
     )
     
