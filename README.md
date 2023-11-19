@@ -7,7 +7,7 @@ Click the link to view the
 [Backend](https://github.com/ReginaldLeandre/PokemonProjectBackend)!
 
 
-To view the Deployed Application [Click Here](https://jolly-medovik-2b8595.netlify.app/)!
+To view the Live Application [Click Here](https://jolly-medovik-2b8595.netlify.app/)!
 
 To see our planning documentation [click here](https://github.com/ReginaldLeandre/PokemonProjFrontend/blob/main/planning/planning.md)!
 
