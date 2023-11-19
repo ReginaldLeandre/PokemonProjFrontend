@@ -1,6 +1,6 @@
 # Pokémon Black Market
 
-**The application is named "Pokémon Black Market," offering a complex yet enjoyable web experience for Pokémon enthusiasts and collectors. Users can choose to either buy Pokémon directly at a premium price or acquire Poké Balls at a fraction of the cost for a chance to "Encounter" Pokémon in the wild. The "Encounter" feature serves as a mini-game, allowing users to use their purchased Poké Balls to catch Pokémon that appear in this section of the app.**
+**Welcome to the "Pokémon Black Market." This application offers a complex yet enjoyable web experience for Pokémon enthusiasts and collectors. Users can choose to either buy Pokémon directly at a premium price or acquire Poké Balls at a fraction of the cost for a chance to "Encounter" Pokémon in the wild. The "Encounter" feature serves as a mini-game, allowing users to use their purchased Poké Balls to catch Pokémon that appear in this section of the app.**
 
 **Once a user has acquired Pokémon or purchased a Poké Ball, they can conveniently view their collection in the user profile section. Additionally, users have the option to search for a specific Pokémon on the "Find Pokémon" page by entering the name or National Pokédex number.**
 
