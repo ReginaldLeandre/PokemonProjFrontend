@@ -80,19 +80,19 @@ const Nav = () => {
             openDropdown && <DropDown />
         }
         { openDropdown && (
-            <div className="bg-poke-lightblue flex flex-col md:hidden">
+            <div className="bg-poke-lightblue flex flex-col fixed w-full top-[48px] md:top-[50px] md:hidden font-[PKMN]">
                 <Link to='/' className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
-                <img className="min-w-max h-[50px] mx-auto" src={Home} alt="Pokemon"/>
+                <p className="text-lg py-3">Pokémon</p>
                 </Link>
                 <Link to="/pokeballs" className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
-                <img className="min-w-max h-[50px] mx-auto" src={PokeBalls} alt="Pokemon"/>
+                <p className="text-lg py-3">Poké Balls</p>
                 </Link>
                 <Link to="/search" className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
-                <img className="min-w-max h-[50px] mx-auto" src={Search} alt="Pokemon"/>
+                <p className="text-lg py-3">Find Pokémon</p>
                 </Link>
                 { token && (<div className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
                 <Link to="/encounter">
-                <img className="min-w-max h-[50px] mx-auto" src={Encounter} alt="Pokemon"/>
+                <p className="text-lg py-3">Encounter</p>
                 </Link>
                 </div>)}
             <div>

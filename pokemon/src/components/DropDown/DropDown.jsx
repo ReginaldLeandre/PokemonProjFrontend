@@ -18,7 +18,7 @@ const DropDown = () => {
   return (
     <div>
       { token && (
-      <div className="hidden md:flex flex-col right-0 w-[140px] bg-poke-lightblue absolute">
+      <div className="hidden md:flex fixed top-[48px] md:top-[50px] right-0 flex-col w-[140px] bg-poke-lightblue">
           <ul className="flex flex-col">
             <Link to={'/user/profile'} onClick={() => handleExtraDropDown()}>
               <li className="hover:bg-poke-grayblue p-2 pb-4 text-lg hover:cursor-pointer" >
