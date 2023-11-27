@@ -29,17 +29,17 @@ const Nav = () => {
         <div className="flex justify-between bg-poke-lightblue w-full sticky top-0">
             <div className="md:flex hidden">
                 <Link to='/'>
-                <img className="min-w-max ml-4 h-[50px] hover:scale-110" src={Home} alt="Pokemon"/>
+                <img className="ml-4 h-[50px] max-w-[135px] hover:scale-110" src={Home} alt="Pokemon"/>
                 </Link>
                 <Link to="/pokeballs">
-                <img className="min-w-max h-[50px] hover:scale-110" src={PokeBalls} alt="Pokeballs"/>
+                <img className="h-[50px] max-w-[153px] hover:scale-110" src={PokeBalls} alt="Pokeballs"/>
                 </Link>
                 <Link to="/search">
-                <img className="min-w-max h-[50px] hover:scale-110" src={Search} alt="Find Pokemon"/>
+                <img className="h-[50px] max-w-[176px] hover:scale-110" src={Search} alt="Find Pokemon"/>
                 </Link>
                 { token && (<div>
                 <Link to="/encounter">
-                    <img className="min-w-max h-[50px] hover:scale-110" src={Encounter} alt="Encounter"/>
+                    <img className="h-[50px] max-w-[152px] hover:scale-110" src={Encounter} alt="Encounter"/>
                 </Link>
                 </div>)}
             </div>
