@@ -112,7 +112,7 @@ const EncounterMain = () => {
                       )}
                     </div>
                   ) : (
-                    <img className="absolute w-[40%] sm:w-[30%] md:w-[20%]" src={pokeData.pokemon.home} alt={pokeData.pokemon.pokemonName}/>
+                    <img className="z-10 absolute w-[40%] sm:w-[30%] md:w-[20%] " src={pokeData.pokemon.home} alt={pokeData.pokemon.pokemonName}/>
                     )}
               </div>
               {catchMsg && catchMsg.changeToPokeball ? (

@@ -80,7 +80,7 @@ const Nav = () => {
             openDropdown && <DropDown />
         }
         { openDropdown && (
-            <div className="bg-poke-lightblue flex flex-col fixed w-full top-[48px] md:top-[50px] md:hidden font-[PKMN]">
+            <div className="z-20 bg-poke-lightblue flex flex-col fixed w-full top-[48px] md:top-[50px] md:hidden font-[PKMN]">
                 <Link to='/' className="hover:bg-poke-grayblue" onClick={() => handleExtraDropDown()}>
                 <p className="text-lg py-3">Pokémon</p>
                 </Link>
